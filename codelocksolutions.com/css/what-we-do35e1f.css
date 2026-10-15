@@ -1,0 +1,1106 @@
+/* =====================================================
+   What We Do Section — Shopno Signature Luxury Redesign
+   Unified Brand Aesthetic · Shopno Gold & Charcoal Logo Colors
+   Fluid Hover Micro-Interactions · Unique Signature CTA Button
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ── Section Background ── */
+.what-we-do-section {
+    background: #fbfbfa;
+    background-image: 
+        radial-gradient(circle at 12% 15%, rgba(246, 187, 50, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 88% 85%, rgba(251, 191, 36, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 80%);
+    padding: 110px 20px 100px;
+    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+}
+
+[data-theme="dark"] .what-we-do-section {
+    background: #090d16;
+    background-image: 
+        radial-gradient(circle at 12% 15%, rgba(246, 187, 50, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+    color: #f8fafc;
+}
+
+/* Subtle Geometric Ambient Grid */
+.what-we-do-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+[data-theme="dark"] .what-we-do-section::before {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* =====================================================
+   Section Header
+   ===================================================== */
+.wwd-header {
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.wwd-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 24px;
+    border-radius: 999px;
+    background: rgba(246, 187, 50, 0.12);
+    border: 1.5px solid rgba(246, 187, 50, 0.4);
+    color: #92400e;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 16px rgba(246, 187, 50, 0.14);
+    transition: all 0.3s ease;
+}
+
+.wwd-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(246, 187, 50, 0.18);
+    box-shadow: 0 6px 20px rgba(246, 187, 50, 0.22);
+}
+
+.wwd-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f6bb32;
+    box-shadow: 0 0 10px #f6bb32;
+    animation: wwdPulseDot 2s infinite ease-in-out;
+}
+
+@keyframes wwdPulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.55; }
+}
+
+.wwd-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #0f172a;
+    letter-spacing: -0.8px;
+}
+
+[data-theme="dark"] .wwd-heading {
+    color: #ffffff;
+}
+
+.wwd-heading-gradient {
+    background: linear-gradient(135deg, #b45309 0%, #d97706 35%, #f6bb32 75%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+}
+
+.wwd-desc {
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: #64748b;
+    max-width: 740px;
+    margin: 0 auto;
+    font-weight: 450;
+}
+
+[data-theme="dark"] .wwd-desc {
+    color: #94a3b8;
+}
+
+.wwd-header-divider {
+    width: 64px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f6bb32, #fbbf24);
+    margin: 26px auto 0;
+    box-shadow: 0 2px 10px rgba(246, 187, 50, 0.4);
+}
+
+/* =====================================================
+   Cards Grid Layout
+   ===================================================== */
+.wwd-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 60px auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================================
+   UNIFIED LUXURY SERVICE CARD (All Boxes Cohesive)
+   ===================================================== */
+.wwd-service-card {
+    background: #ffffff;
+    border-radius: 26px;
+    border: 1.5px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 
+        0 4px 12px rgba(15, 23, 42, 0.03),
+        0 14px 34px -8px rgba(15, 23, 42, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+    padding: 36px 32px 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+[data-theme="dark"] .wwd-service-card {
+    background: #101623;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Staggered entrance animation */
+.wwd-service-card.revealed,
+.wwd-service-card.card-reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wwd-service-card:nth-child(1) { transition: opacity 0.6s ease 0.05s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+.wwd-service-card:nth-child(2) { transition: opacity 0.6s ease 0.12s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+.wwd-service-card:nth-child(3) { transition: opacity 0.6s ease 0.19s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.19s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+.wwd-service-card:nth-child(4) { transition: opacity 0.6s ease 0.26s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.26s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+.wwd-service-card:nth-child(5) { transition: opacity 0.6s ease 0.33s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.33s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+.wwd-service-card:nth-child(6) { transition: opacity 0.6s ease 0.40s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.40s, box-shadow 0.45s ease, border-color 0.4s ease, background 0.4s ease; }
+
+/* Dynamic Ambient Glow Behind Card on Hover */
+.wwd-service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 26px;
+    background: radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(246, 187, 50, 0.12), transparent 60%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+[data-theme="dark"] .wwd-service-card::before {
+    background: radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 0%), rgba(246, 187, 50, 0.16), transparent 60%);
+}
+
+.wwd-service-card:hover::before {
+    opacity: 1;
+}
+
+/* Diagonal Shine Sweep on Card Hover */
+.wwd-service-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -120%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0) 35%,
+        rgba(246, 187, 50, 0.18) 50%,
+        rgba(255, 255, 255, 0.6) 52%,
+        rgba(246, 187, 50, 0.18) 54%,
+        rgba(255, 255, 255, 0) 65%,
+        transparent 100%
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    z-index: 10;
+    transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd-service-card:hover::after {
+    left: 200%;
+}
+
+/* =====================================================
+   HOVER TRANSFORMATION (Shopno Golden Glow Aura)
+   ===================================================== */
+.wwd-service-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(246, 187, 50, 0.65);
+    background: #ffffff;
+    box-shadow: 
+        0 24px 50px -10px rgba(246, 187, 50, 0.28),
+        0 10px 24px -4px rgba(15, 23, 42, 0.06),
+        inset 0 1px 0 #ffffff;
+}
+
+[data-theme="dark"] .wwd-service-card:hover {
+    background: #131b2c;
+    border-color: rgba(246, 187, 50, 0.6);
+    box-shadow: 
+        0 24px 50px -8px rgba(246, 187, 50, 0.25),
+        0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Top Accent Luminous Glow Line (Shopno Gold) */
+.wwd-card-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3.5px;
+    background: linear-gradient(90deg, #d97706 0%, #f6bb32 30%, #fbbf24 70%, #d97706 100%);
+    opacity: 0;
+    transform: scaleX(0.2);
+    transform-origin: center;
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
+}
+
+.wwd-service-card:hover .wwd-card-top-bar {
+    opacity: 1;
+    transform: scaleX(1);
+    box-shadow: 0 2px 14px rgba(246, 187, 50, 0.8);
+}
+
+/* =====================================================
+   Card Header Row (Step Badge + Watermark Numeral)
+   ===================================================== */
+.wwd-card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Step Badge (Shopno Yellow Pill Style) */
+.wwd-step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(246, 187, 50, 0.12);
+    color: #92400e;
+    border: 1.5px solid rgba(246, 187, 50, 0.35);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd-step-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f6bb32;
+    box-shadow: 0 0 8px #f6bb32;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .wwd-step-badge {
+    background: rgba(246, 187, 50, 0.15);
+    border-color: rgba(246, 187, 50, 0.35);
+    color: #fbbf24;
+}
+
+/* Hover: Fills with solid Shopno Yellow & crisp dark text */
+.wwd-service-card:hover .wwd-step-badge {
+    background: linear-gradient(135deg, #f6bb32 0%, #f59e0b 100%);
+    color: #0f172a;
+    border-color: #f6bb32;
+    box-shadow: 0 4px 14px rgba(246, 187, 50, 0.4);
+    transform: translateY(-2px);
+}
+
+.wwd-service-card:hover .wwd-step-badge::before {
+    background: #0f172a;
+    box-shadow: 0 0 6px rgba(15, 23, 42, 0.4);
+}
+
+/* Watermark Numeral */
+.wwd-step-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(246, 187, 50, 0.3);
+    user-select: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] .wwd-step-number {
+    -webkit-text-stroke: 1.5px rgba(246, 187, 50, 0.32);
+}
+
+.wwd-service-card:hover .wwd-step-number {
+    -webkit-text-stroke: 1.5px rgba(246, 187, 50, 0.75);
+    color: rgba(246, 187, 50, 0.12);
+    transform: translateY(-2px) scale(1.08);
+}
+
+/* =====================================================
+   Icon Squircle (Shopno Logo Colors)
+   ===================================================== */
+.wwd-icon-box {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+    border: 1.5px solid rgba(246, 187, 50, 0.35);
+    box-shadow: 
+        0 6px 18px rgba(246, 187, 50, 0.14),
+        inset 0 1px 0 #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b45309;
+    margin-bottom: 22px;
+    transition: 
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        color 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .wwd-icon-box {
+    background: linear-gradient(135deg, rgba(246, 187, 50, 0.15) 0%, rgba(251, 191, 36, 0.05) 100%);
+    border-color: rgba(246, 187, 50, 0.32);
+    color: #fbbf24;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.wwd-icon-box svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 2.1;
+    filter: drop-shadow(0 2px 4px rgba(180, 83, 9, 0.15));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover: Icon container transforms to radiant Shopno Gold with dark icon */
+.wwd-service-card:hover .wwd-icon-box {
+    transform: translateY(-6px) scale(1.1) rotate(-3deg);
+    background: linear-gradient(135deg, #f6bb32 0%, #f59e0b 100%);
+    border-color: #f6bb32;
+    color: #0f172a;
+    box-shadow: 
+        0 14px 28px -4px rgba(246, 187, 50, 0.55),
+        0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+.wwd-service-card:hover .wwd-icon-box svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+    transform: scale(1.08);
+}
+
+/* =====================================================
+   Card Typography (Title & Body)
+   ===================================================== */
+.wwd-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+[data-theme="dark"] .wwd-card-title {
+    color: #f3f4f6;
+}
+
+.wwd-service-card:hover .wwd-card-title {
+    color: #b45309;
+}
+
+[data-theme="dark"] .wwd-service-card:hover .wwd-card-title {
+    color: #fbbf24;
+}
+
+.wwd-card-text {
+    font-size: 14.5px;
+    line-height: 1.68;
+    color: #64748b;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    font-weight: 450;
+    min-height: 52px;
+}
+
+[data-theme="dark"] .wwd-card-text {
+    color: #94a3b8;
+}
+
+/* =====================================================
+   ATTRACTIVE INTERACTIVE WIDGETS (SaaS Mockups)
+   ===================================================== */
+.wwd-widget {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 13px 15px;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] .wwd-widget {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.wwd-service-card:hover .wwd-widget {
+    background: #ffffff;
+    border-color: rgba(246, 187, 50, 0.45);
+    box-shadow: 0 8px 20px -4px rgba(246, 187, 50, 0.15);
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .wwd-service-card:hover .wwd-widget {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(246, 187, 50, 0.35);
+}
+
+/* Widget 1: Browser Bar */
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+.browser-dots {
+    display: flex;
+    gap: 4px;
+}
+.b-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.b-dot.red { background: #ef4444; }
+.b-dot.yellow { background: #f59e0b; }
+.b-dot.green { background: #10b981; }
+
+.browser-url {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 10.5px;
+    color: #475569;
+    font-family: monospace;
+}
+.browser-url svg {
+    width: 11px;
+    height: 11px;
+    color: #10b981;
+}
+.browser-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+.b-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #475569;
+}
+.stat-dot.green {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+}
+.b-stat.highlight {
+    background: rgba(246, 187, 50, 0.16);
+    border: 1px solid rgba(246, 187, 50, 0.4);
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: #92400e;
+}
+.stat-val {
+    font-weight: 900;
+    color: #b45309;
+}
+
+/* Widget 2: Architecture Node */
+.arch-node-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+.arch-node {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 750;
+    color: #0f172a;
+}
+.arch-node.active {
+    border-color: rgba(246, 187, 50, 0.45);
+    background: rgba(246, 187, 50, 0.1);
+    color: #92400e;
+}
+.arch-line {
+    flex: 1;
+    height: 2px;
+    margin: 0 8px;
+    background: linear-gradient(90deg, #f6bb32, #cbd5e1);
+    position: relative;
+}
+.arch-metrics {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #475569;
+}
+.metric-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.m-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 6px #10b981;
+}
+.m-val {
+    color: #b45309;
+    font-weight: 900;
+}
+
+/* Widget 3: Theme 2.0 Stack */
+.theme-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    padding: 5px 9px;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+.theme-block:last-child {
+    margin-bottom: 0;
+}
+.theme-check {
+    color: #10b981;
+    font-weight: 900;
+}
+.theme-file {
+    font-family: monospace;
+    color: #334155;
+    font-size: 10.5px;
+    font-weight: 600;
+}
+.theme-badge {
+    background: rgba(246, 187, 50, 0.16);
+    color: #92400e;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 800;
+}
+.theme-speed {
+    background: #ecfdf5;
+    color: #059669;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 800;
+}
+
+/* Widget 4: GraphQL Console */
+.wwd-widget-api {
+    background: #0f172a;
+    border-color: #1e293b;
+    color: #e2e8f0;
+}
+.wwd-service-card:hover .wwd-widget-api {
+    background: #0f172a;
+    border-color: rgba(246, 187, 50, 0.5);
+}
+.api-header {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    font-family: monospace;
+    font-size: 11px;
+}
+.api-method {
+    background: #f6bb32;
+    color: #0f172a;
+    font-weight: 900;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9.5px;
+}
+.api-endpoint {
+    color: #94a3b8;
+}
+.api-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 10.5px;
+    font-weight: 700;
+}
+.api-pill.success {
+    color: #34d399;
+}
+.api-time {
+    color: #64748b;
+}
+.api-sync {
+    color: #fbbf24;
+}
+
+/* Widget 5: Google Speed Gauge */
+.speed-gauge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.speed-score-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid #10b981;
+    background: rgba(16, 185, 129, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.25);
+    flex-shrink: 0;
+}
+.speed-num {
+    font-size: 17px;
+    font-weight: 900;
+    color: #059669;
+    line-height: 1;
+}
+.speed-lbl {
+    font-size: 8px;
+    text-transform: uppercase;
+    color: #059669;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+.speed-vitals {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+}
+.vital-item {
+    text-align: center;
+}
+.vital-name {
+    display: block;
+    font-size: 9.5px;
+    color: #64748b;
+    font-weight: 750;
+    margin-bottom: 2px;
+}
+.vital-val {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 850;
+    color: #0f172a;
+}
+
+/* Widget 6: Ecosystem Connectors */
+.integ-connectors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+.integ-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.25s ease;
+}
+.wwd-service-card:hover .integ-chip {
+    border-color: rgba(246, 187, 50, 0.35);
+}
+
+/* =====================================================
+   Service Highlight Tags (Logo Palette Pills)
+   ===================================================== */
+.wwd-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 2;
+}
+
+.wwd-tag {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 13px;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .wwd-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+}
+
+.wwd-service-card:hover .wwd-tag {
+    background: rgba(246, 187, 50, 0.12);
+    border-color: rgba(246, 187, 50, 0.4);
+    color: #92400e;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(246, 187, 50, 0.15);
+}
+
+[data-theme="dark"] .wwd-service-card:hover .wwd-tag {
+    background: rgba(246, 187, 50, 0.18);
+    border-color: rgba(246, 187, 50, 0.45);
+    color: #fde68a;
+}
+
+/* =====================================================
+   UNIQUE SIGNATURE BUTTON DESIGN (Shopno Capsule CTA)
+   ===================================================== */
+.wwd-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 6px 6px 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+    border: 1.5px solid rgba(246, 187, 50, 0.4);
+    box-shadow: 
+        0 2px 8px rgba(15, 23, 42, 0.03),
+        inset 0 1px 0 #ffffff;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+[data-theme="dark"] .wwd-card-footer {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(246, 187, 50, 0.35);
+    box-shadow: none;
+}
+
+/* Button Background Fill Slide Effect on Hover */
+.wwd-card-footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #f6bb32 0%, #f59e0b 50%, #f6bb32 100%);
+    background-size: 200% 100%;
+    opacity: 0;
+    transform: scaleX(0.92);
+    transition: 
+        opacity 0.4s ease,
+        transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+        background-position 0.6s ease;
+    z-index: 0;
+}
+
+.wwd-action-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 850;
+    letter-spacing: 0.8px;
+    color: #0f172a;
+    text-transform: uppercase;
+    transition: all 0.35s ease;
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Mini indicator dot inside button */
+.wwd-action-text::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f6bb32;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .wwd-action-text {
+    color: #e2e8f0;
+}
+
+/* Unique Circular Action Disc (Charcoal with Arrow) */
+.wwd-action-arrow {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #0f172a;
+    border: 1.5px solid #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6bb32;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+[data-theme="dark"] .wwd-action-arrow {
+    background: #090d16;
+    border-color: rgba(246, 187, 50, 0.4);
+    color: #f6bb32;
+}
+
+.wwd-action-arrow svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.2;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── BUTTON HOVER BEHAVIOR (On Card Hover) ── */
+.wwd-service-card:hover .wwd-card-footer {
+    border-color: #f6bb32;
+    box-shadow: 0 8px 25px -4px rgba(246, 187, 50, 0.55);
+    transform: translateY(-2px);
+}
+
+.wwd-service-card:hover .wwd-card-footer::before {
+    opacity: 1;
+    transform: scaleX(1);
+    background-position: 100% 0;
+}
+
+.wwd-service-card:hover .wwd-action-text {
+    color: #0f172a;
+    transform: translateX(3px);
+}
+
+.wwd-service-card:hover .wwd-action-text::before {
+    background: #0f172a;
+    box-shadow: 0 0 6px rgba(15, 23, 42, 0.4);
+}
+
+.wwd-service-card:hover .wwd-action-arrow {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff;
+    transform: translateX(2px) scale(1.08);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.4);
+}
+
+.wwd-service-card:hover .wwd-action-arrow svg {
+    transform: translateX(3px);
+}
+
+/* ── DIRECT HOVER ON BUTTON ITSELF ── */
+.wwd-card-footer:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 10px 28px -2px rgba(246, 187, 50, 0.65) !important;
+}
+
+.wwd-card-footer:hover .wwd-action-arrow {
+    background: #000000 !important;
+    color: #f6bb32 !important;
+    transform: translateX(3px) scale(1.12) rotate(45deg) !important;
+}
+
+/* =====================================================
+   Explore All Services CTA Button
+   ===================================================== */
+.view-all {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: #0f172a;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary:hover {
+    background: linear-gradient(135deg, #f6bb32 0%, #f59e0b 100%);
+    color: #0f172a;
+    border-color: #f6bb32;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(246, 187, 50, 0.45);
+}
+
+.cta-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.cta-primary:hover .cta-icon {
+    transform: translateX(4px);
+}
+
+/* =====================================================
+   Responsive Adjustments
+   ===================================================== */
+@media (max-width: 1024px) {
+    .wwd-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .wwd-heading {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .what-we-do-section {
+        padding: 75px 20px 65px;
+    }
+    .wwd-heading {
+        font-size: 32px;
+    }
+    .wwd-desc {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .what-we-do-section {
+        padding: 60px 16px 50px;
+    }
+    .wwd-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 35px;
+    }
+    .wwd-heading {
+        font-size: 27px;
+    }
+    .wwd-service-card {
+        padding: 28px 24px 24px;
+    }
+}
+
+/* Backward compatibility for legacy markup */
+.wwd-tilt-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1.5px solid rgba(226, 232, 240, 0.95);
+    padding: 30px 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.wwd-tilt-card::before, .wwd-tilt-card::after { display: none !important; }
+.wwd-card-inner { background: transparent !important; border: none !important; padding: 0 !important; box-shadow: none !important; }

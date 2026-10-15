@@ -1,0 +1,942 @@
+/* =====================================================
+   PROCESS SECTION — UNIQUE PREMIUM REDESIGN
+   Layout: Image+Header top | Staggered Glasscard Grid below
+   ===================================================== */
+
+/* ── Section ── */
+.process-section {
+    padding: 90px 0 80px;
+    background: var(--bg-primary, #fdf8f0);
+    position: relative;
+    overflow: hidden;
+}
+
+/* =====================================================
+   UNIQUE CARD GRID — process-cards-grid
+   ===================================================== */
+.process-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+}
+
+/* Center last 2 cards (row 2) using grid tricks */
+.process-cards-grid::after {
+    content: '';
+    grid-column: 3;  /* fill third column of row 2 so row 2 has only 2 items naturally */
+    display: none;   /* hidden; used when needed */
+}
+
+/* ── Single Premium Card ── */
+.process-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: default;
+    border: 1.5px solid rgba(0,0,0,0.06);
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.04),
+        0 8px 28px rgba(0,0,0,0.06);
+    transition:
+        transform 0.45s cubic-bezier(0.34,1.56,0.64,1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+[data-theme="dark"] .process-card {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+    backdrop-filter: blur(16px);
+}
+
+/* Hover: lift + glow border */
+.process-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow:
+        0 24px 64px rgba(0,0,0,0.13),
+        0 0 0 2px rgba(245,166,35,0.3);
+    border-color: rgba(245,166,35,0.4);
+    z-index: 5;
+}
+[data-theme="dark"] .process-card:hover {
+    box-shadow:
+        0 24px 64px rgba(0,0,0,0.45),
+        0 0 0 2px rgba(245,166,35,0.35);
+}
+
+/* Animated top stripe */
+.process-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gradient-primary, linear-gradient(90deg,#f5a623,#e8910a));
+    border-radius: 20px 20px 0 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+    z-index: 2;
+}
+.process-card:hover::before { transform: scaleX(1); }
+
+/* Subtle accent left-border per card */
+.process-card:nth-child(1) { border-left: 3px solid rgba(245,166,35,0.35); }
+.process-card:nth-child(2) { border-left: 3px solid rgba(99,102,241,0.30); }
+.process-card:nth-child(3) { border-left: 3px solid rgba(6,182,212,0.30);  }
+.process-card:nth-child(4) { border-left: 3px solid rgba(168,85,247,0.30); }
+.process-card:nth-child(5) { border-left: 3px solid rgba(34,197,94,0.30);  }
+
+/* ── Card Top: Badge + Icon ── */
+.proc-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Step number badge — rounded square */
+.proc-step-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--gradient-secondary, linear-gradient(135deg,#f5a623,#c99a2e));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(245,166,35,0.35);
+    transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+    position: relative;
+}
+.process-card:nth-child(2) .proc-step-badge {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    box-shadow: 0 6px 18px rgba(99,102,241,0.35);
+}
+.process-card:nth-child(3) .proc-step-badge {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    box-shadow: 0 6px 18px rgba(6,182,212,0.35);
+}
+.process-card:nth-child(4) .proc-step-badge {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    box-shadow: 0 6px 18px rgba(168,85,247,0.35);
+}
+.process-card:nth-child(5) .proc-step-badge {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 6px 18px rgba(34,197,94,0.35);
+}
+
+/* Badge pulse ring on card hover */
+.proc-step-badge::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 17px;
+    border: 2px solid currentColor;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    color: rgba(245,166,35,0.6);
+}
+.process-card:hover .proc-step-badge {
+    transform: rotate(-8deg) scale(1.12);
+}
+.process-card:hover .proc-step-badge::after {
+    opacity: 1;
+    transform: scale(1);
+    animation: badgePulse 1.6s ease-in-out infinite;
+}
+@keyframes badgePulse {
+    0%,100% { opacity: 0.8; transform: scale(1); }
+    50%      { opacity: 0;   transform: scale(1.35); }
+}
+
+/* Step icon box */
+.proc-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(245,166,35,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.35s ease, transform 0.45s cubic-bezier(0.34,1.56,0.64,1);
+}
+.proc-icon-box svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-primary, #c99a2e);
+    transition: stroke 0.3s ease, transform 0.35s ease;
+}
+.process-card:nth-child(2) .proc-icon-box { background: rgba(99,102,241,0.08); }
+.process-card:nth-child(2) .proc-icon-box svg { stroke: #6366f1; }
+.process-card:nth-child(3) .proc-icon-box { background: rgba(6,182,212,0.08); }
+.process-card:nth-child(3) .proc-icon-box svg { stroke: #06b6d4; }
+.process-card:nth-child(4) .proc-icon-box { background: rgba(168,85,247,0.08); }
+.process-card:nth-child(4) .proc-icon-box svg { stroke: #a855f7; }
+.process-card:nth-child(5) .proc-icon-box { background: rgba(34,197,94,0.08); }
+.process-card:nth-child(5) .proc-icon-box svg { stroke: #22c55e; }
+.process-card:hover .proc-icon-box {
+    background: rgba(245,166,35,0.15);
+    transform: scale(1.08) rotate(6deg);
+}
+.process-card:nth-child(2):hover .proc-icon-box { background: rgba(99,102,241,0.15); }
+.process-card:nth-child(3):hover .proc-icon-box { background: rgba(6,182,212,0.15); }
+.process-card:nth-child(4):hover .proc-icon-box { background: rgba(168,85,247,0.15); }
+.process-card:nth-child(5):hover .proc-icon-box { background: rgba(34,197,94,0.15); }
+
+/* ── Card Body ── */
+.proc-card-body {
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ghost watermark number */
+.proc-ghost-num {
+    position: absolute;
+    right: -2px;
+    bottom: 4px;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0,0,0,0.04);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: transform 0.5s ease, -webkit-text-stroke 0.5s ease;
+}
+[data-theme="dark"] .proc-ghost-num {
+    -webkit-text-stroke: 2px rgba(255,255,255,0.05);
+}
+.process-card:hover .proc-ghost-num {
+    transform: scale(1.08) translateY(-5px);
+    -webkit-text-stroke: 2px rgba(245,166,35,0.16);
+}
+.process-card:nth-child(2):hover .proc-ghost-num { -webkit-text-stroke: 2px rgba(99,102,241,0.16); }
+.process-card:nth-child(3):hover .proc-ghost-num { -webkit-text-stroke: 2px rgba(6,182,212,0.16); }
+.process-card:nth-child(4):hover .proc-ghost-num { -webkit-text-stroke: 2px rgba(168,85,247,0.16); }
+.process-card:nth-child(5):hover .proc-ghost-num { -webkit-text-stroke: 2px rgba(34,197,94,0.16); }
+
+.proc-title {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-primary, #1a1a2e);
+    line-height: 1.3;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+.process-card:hover .proc-title { color: var(--accent-primary, #c99a2e); }
+.process-card:nth-child(2):hover .proc-title { color: #6366f1; }
+.process-card:nth-child(3):hover .proc-title { color: #06b6d4; }
+.process-card:nth-child(4):hover .proc-title { color: #a855f7; }
+.process-card:nth-child(5):hover .proc-title { color: #22c55e; }
+
+.proc-desc {
+    font-size: 13.5px;
+    line-height: 1.72;
+    color: var(--text-secondary, #6b7280);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+    flex: 1;
+}
+.process-card:hover .proc-desc { color: var(--text-primary, #374151); }
+
+/* "Explore →" micro link */
+.proc-arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--accent-primary, #c99a2e);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s, gap 0.25s ease;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+.process-card:nth-child(2) .proc-arrow-link { color: #6366f1; }
+.process-card:nth-child(3) .proc-arrow-link { color: #06b6d4; }
+.process-card:nth-child(4) .proc-arrow-link { color: #a855f7; }
+.process-card:nth-child(5) .proc-arrow-link { color: #22c55e; }
+.process-card:hover .proc-arrow-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+.proc-arrow-link svg {
+    width: 14px; height: 14px;
+    stroke: currentColor;
+    transition: transform 0.25s ease;
+}
+.proc-arrow-link:hover svg { transform: translateX(4px); }
+
+/* ── Scroll Reveal ── */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+    transition:
+        opacity 0.65s cubic-bezier(0.25,1,0.5,1),
+        transform 0.65s cubic-bezier(0.25,1,0.5,1);
+}
+.reveal-item.reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+/* CSS-only fallback: if JS never fires, show cards after a delay */
+@keyframes autoReveal {
+    from { opacity: 0; transform: translateY(32px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+.process-card:nth-child(1) { animation: autoReveal 0.65s cubic-bezier(0.25,1,0.5,1) 0.3s both; }
+.process-card:nth-child(2) { animation: autoReveal 0.65s cubic-bezier(0.25,1,0.5,1) 0.45s both; }
+.process-card:nth-child(3) { animation: autoReveal 0.65s cubic-bezier(0.25,1,0.5,1) 0.6s both; }
+.process-card:nth-child(4) { animation: autoReveal 0.65s cubic-bezier(0.25,1,0.5,1) 0.75s both; }
+.process-card:nth-child(5) { animation: autoReveal 0.65s cubic-bezier(0.25,1,0.5,1) 0.9s both; }
+
+/* Once JS fires reveal-active, stop the CSS animation */
+.process-card.reveal-active { animation: none !important; }
+
+
+
+/* Subtle dot-grid pattern overlay */
+.process-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+}
+[data-theme="dark"] .process-section::after {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+}
+
+/* Warm ambient glow blobs */
+.process-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 55% 45% at 8%  20%, rgba(245,166,35,0.10)  0%, transparent 65%),
+        radial-gradient(ellipse 45% 40% at 92% 75%, rgba(114,137,72,0.08) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+[data-theme="dark"] .process-section::before {
+    background:
+        radial-gradient(ellipse 55% 45% at 8%  20%, rgba(245,166,35,0.07)  0%, transparent 65%),
+        radial-gradient(ellipse 45% 40% at 92% 75%, rgba(0,242,254,0.06) 0%, transparent 65%);
+}
+
+/* =====================================================
+   TOP ROW  — Image LEFT  |  Header RIGHT
+   ===================================================== */
+.process-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 70px;
+}
+
+/* ── Left Image ── */
+@keyframes imgFloat {
+    0%, 100% { transform: translateY(0px)  rotate(0deg); }
+    50%       { transform: translateY(-14px) rotate(0.4deg); }
+}
+
+.process-image-wrapper {
+    flex: 0 0 42%;
+    position: relative;
+    animation: imgFloat 7s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Decorative blob behind image */
+.process-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -18px;
+    background: conic-gradient(from 0deg, rgba(245,166,35,0.18), rgba(114,137,72,0.12), rgba(245,166,35,0.18));
+    border-radius: 40% 60% 55% 45% / 45% 55% 60% 40%;
+    filter: blur(28px);
+    z-index: -1;
+    animation: blobMorph 9s ease-in-out infinite alternate;
+}
+@keyframes blobMorph {
+    0%   { border-radius: 40% 60% 55% 45% / 45% 55% 60% 40%; }
+    50%  { border-radius: 60% 40% 45% 55% / 55% 45% 40% 60%; }
+    100% { border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%; }
+}
+
+/* Floating badge — "5-Step Process" */
+.process-image-wrapper::after {
+    content: '5-Step Process';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    background: var(--gradient-primary, linear-gradient(135deg,#f5a623,#e8910a));
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(245,166,35,0.4);
+    z-index: 3;
+    white-space: nowrap;
+    animation: badgePop 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.8s both;
+}
+@keyframes badgePop {
+    from { opacity: 0; transform: scale(0.6) rotate(-6deg); }
+    to   { opacity: 1; transform: scale(1)   rotate(0deg);  }
+}
+
+.process-image-wrapper img {
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
+    transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+}
+.process-image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* ── Right Header ── */
+.process-content-wrapper {
+    flex: 1;
+    z-index: 1;
+}
+.process-header { margin-bottom: 0; }
+
+/* "— HOW WE WORK —" pill */
+.process-subheading {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-primary, #c99a2e);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.process-subheading::before,
+.process-subheading::after {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--gradient-primary, linear-gradient(135deg,#f5a623,#e8910a));
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.process-subheading.anim-in { opacity: 1; transform: translateY(0); }
+
+.process-title {
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 900;
+    margin: 0 0 18px;
+    color: var(--text-primary, #1a1a2e);
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+.process-title.anim-in { opacity: 1; transform: translateY(0); }
+
+.process-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary, #6b7280);
+    margin: 0;
+    line-height: 1.75;
+    max-width: 440px;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+    position: relative;
+    padding-bottom: 24px;
+}
+.process-subtitle.anim-in { opacity: 1; transform: translateY(0); }
+
+/* Gold underline accent */
+.process-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 52px;
+    height: 3px;
+    background: var(--gradient-primary, linear-gradient(135deg,#f5a623,#e8910a));
+    border-radius: 3px;
+}
+
+/* =====================================================
+   UNIQUE STEP CARDS  — 3-col top, 2-col bottom (centered)
+   ===================================================== */
+.process-timeline {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide old timeline elements */
+.timeline-container { overflow: visible; padding: 0; }
+
+.timeline-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    position: relative;
+    transition: none;
+}
+
+/* Override old before/after connecting line */
+.timeline-track::before,
+.timeline-track::after { display: none !important; }
+
+/* Hide old progress line */
+.timeline-progress-line { display: none; }
+
+/* ── Individual Step Card ── */
+.timeline-step {
+    position: relative;
+    background: var(--bg-card, #ffffff);
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+    overflow: hidden;
+    cursor: default;
+    border: 1.5px solid rgba(0,0,0,0.06);
+    box-shadow:
+        0 4px 6px rgba(0,0,0,0.04),
+        0 10px 30px rgba(0,0,0,0.06);
+    transition:
+        transform 0.45s cubic-bezier(0.34,1.56,0.64,1),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+    /* Reset old flex/opacity overrides */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    flex: unset !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+[data-theme="dark"] .timeline-step {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+}
+
+/* Coloured top stripe */
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gradient-primary, linear-gradient(90deg,#f5a623,#e8910a));
+    border-radius: 20px 20px 0 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+}
+.timeline-step:hover::before { transform: scaleX(1); }
+
+/* Ghost watermark number */
+.step-bg-number {
+    position: absolute;
+    right: -4px;
+    top: 6px;
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0,0,0,0.04);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: transform 0.5s ease, -webkit-text-stroke 0.5s ease;
+}
+[data-theme="dark"] .step-bg-number {
+    -webkit-text-stroke: 2px rgba(255,255,255,0.05);
+}
+.timeline-step:hover .step-bg-number {
+    transform: scale(1.08) translateY(-4px);
+    -webkit-text-stroke: 2px rgba(245,166,35,0.18);
+}
+
+/* Hover lift */
+.timeline-step:hover {
+    transform: translateY(-10px) scale(1.01) !important;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.12),
+        0 0 0 2px rgba(245,166,35,0.25);
+    border-color: rgba(245,166,35,0.35);
+    z-index: 5;
+}
+[data-theme="dark"] .timeline-step:hover {
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.4),
+        0 0 0 2px rgba(245,166,35,0.3);
+}
+
+/* ── Step Number Badge ── */
+.timeline-marker-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-marker {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--gradient-secondary, linear-gradient(135deg,#f5a623,#c99a2e));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(245,166,35,0.35);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+}
+.timeline-step:hover .timeline-marker {
+    transform: rotate(-6deg) scale(1.15);
+    box-shadow: 0 10px 28px rgba(245,166,35,0.5);
+}
+
+/* Pulse ring on hover */
+.timeline-marker::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 17px;
+    border: 2px solid rgba(245,166,35,0.5);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.timeline-step:hover .timeline-marker::after {
+    opacity: 1;
+    transform: scale(1);
+    animation: squarePulse 1.5s ease-in-out infinite;
+}
+@keyframes squarePulse {
+    0%,100% { opacity: 0.8; transform: scale(1); }
+    50%      { opacity: 0;   transform: scale(1.3); }
+}
+
+.timeline-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Step Icon (SVG) ── */
+.step-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(245,166,35,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.35s ease, transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    position: relative;
+    z-index: 2;
+}
+[data-theme="dark"] .step-icon {
+    background: rgba(245,166,35,0.12);
+}
+.step-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-primary, #c99a2e);
+    transition: stroke 0.3s ease;
+}
+.timeline-step:hover .step-icon {
+    background: rgba(245,166,35,0.18);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ── Content ── */
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.timeline-title {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--text-primary, #1a1a2e);
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+.timeline-step:hover .timeline-title {
+    color: var(--accent-primary, #c99a2e);
+}
+
+.timeline-description {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text-secondary, #6b7280);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+.timeline-step:hover .timeline-description {
+    color: var(--text-primary, #1a1a2e);
+}
+
+/* "Learn more" micro-link at bottom */
+.step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--accent-primary, #c99a2e);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.35s ease, transform 0.35s ease, gap 0.25s ease;
+    width: fit-content;
+    z-index: 2;
+    position: relative;
+}
+.timeline-step:hover .step-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+.step-link:hover { gap: 10px; }
+.step-link svg {
+    width: 14px; height: 14px;
+    stroke: currentColor;
+    transition: transform 0.25s ease;
+}
+.step-link:hover svg { transform: translateX(3px); }
+
+/* ── 4th and 5th step: center them in row 2 ── */
+/* Steps 4 & 5 go into a centered second row */
+.timeline-step:nth-child(6) { /* step 04 — index 5 (1 for progress-line + 4 steps) */
+    grid-column: 1;
+}
+.timeline-step:nth-child(7) {
+    grid-column: 2;
+}
+.timeline-step:nth-child(8) {
+    grid-column: 3;
+}
+
+/* Actually target by position in the grid track:
+   progress-line is not a grid item (it's absolute),
+   so steps are children 2-6 (nth-child 2,3,4,5,6) */
+/* Step 4 and 5 center themselves */
+.timeline-step:nth-child(5),
+.timeline-step:nth-child(6) {
+    /* They'll naturally flow to next row in 3-col grid */
+}
+
+/* Center the partial second row */
+.timeline-track {
+    --gap: 24px;
+}
+/* Pseudo-class trick: wrap last 2 cards if needed via JS, 
+   but as CSS-only: use subgrid or manual col placement */
+
+/* ── Connector dots between cards ── */
+.timeline-step + .timeline-step::before {
+    content: none; /* Override the top-stripe ::before via specificity */
+}
+
+/* Re-apply top stripe (higher specificity won over the ::before connector) */
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gradient-primary, linear-gradient(90deg,#f5a623,#e8910a));
+    border-radius: 20px 20px 0 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+    z-index: 3;
+}
+.timeline-step:hover::before { transform: scaleX(1); }
+
+/* Step colour accents — subtle left border per step */
+.timeline-step:nth-child(2) { border-left: 3px solid rgba(245,166,35,0.35); }
+.timeline-step:nth-child(3) { border-left: 3px solid rgba(114,137,72,0.30); }
+.timeline-step:nth-child(4) { border-left: 3px solid rgba(59,130,246,0.25); }
+.timeline-step:nth-child(5) { border-left: 3px solid rgba(168,85,247,0.25); }
+.timeline-step:nth-child(6) { border-left: 3px solid rgba(34,197,94,0.25); }
+
+/* ── Scroll Reveal ── */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(36px) scale(0.97);
+    transition:
+        opacity 0.7s cubic-bezier(0.25,1,0.5,1),
+        transform 0.7s cubic-bezier(0.25,1,0.5,1);
+}
+.reveal-item.reveal-active {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+}
+.timeline-step:nth-child(2).reveal-active { transition-delay: 0.05s; }
+.timeline-step:nth-child(3).reveal-active { transition-delay: 0.15s; }
+.timeline-step:nth-child(4).reveal-active { transition-delay: 0.25s; }
+.timeline-step:nth-child(5).reveal-active { transition-delay: 0.35s; }
+.timeline-step:nth-child(6).reveal-active { transition-delay: 0.45s; }
+
+/* ── Row 2 centering (steps 4 & 5) ── */
+/* We use CSS Grid "auto-placement" with a special approach:
+   Give the last 2 steps a column start so they center */
+.timeline-track > .timeline-step:nth-last-child(2) {
+    grid-column: 1 / 2;
+    margin-left: calc(50% + var(--gap) / 2);
+}
+.timeline-track > .timeline-step:nth-last-child(1) {
+    grid-column: 2 / 3;
+}
+/* If 5 steps: step4=col1+offset, step5=col2+offset to look centered */
+/* Simpler: just use auto and let the grid fill; 
+   the offset margin trick won't work cleanly without JS.
+   Instead, keep 3-col grid — 3 in row1, 2 in row2 — and center row2 via container */
+
+/* =====================================================
+   Navigation Arrows
+   ===================================================== */
+.timeline-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    justify-content: flex-start;
+}
+
+.timeline-arrow {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-primary, #c99a2e);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent-primary, #c99a2e);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25,1,0.5,1);
+}
+.timeline-arrow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary, linear-gradient(135deg,#f5a623,#e8910a));
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    z-index: 0;
+}
+.timeline-arrow:hover::before { transform: scale(1); }
+.timeline-arrow:hover {
+    color: #fff;
+    transform: scale(1.12);
+    box-shadow: 0 8px 24px rgba(245,166,35,0.4);
+    border-color: transparent;
+}
+.timeline-arrow svg { width: 20px; height: 20px; position: relative; z-index: 1; }
+.timeline-arrow:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+.timeline-arrow:focus { outline: none; }
+
+/* =====================================================
+   Responsive
+   ===================================================== */
+@media (max-width: 1100px) {
+    .process-wrapper { gap: 44px; }
+    .process-image-wrapper { flex: 0 0 40%; }
+    .process-title { font-size: 36px; }
+    .process-cards-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+
+@media (max-width: 900px) {
+    .process-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
+@media (max-width: 768px) {
+    .process-section { padding: 60px 0 48px; }
+    .process-wrapper {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+    .process-image-wrapper {
+        flex: none;
+        width: 75%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .process-subtitle::after { margin: 0 auto; }
+    .process-subheading { justify-content: center; }
+    .process-cards-grid { grid-template-columns: 1fr; gap: 14px; }
+    .proc-arrow-link { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+    .process-section { padding: 44px 0 36px; }
+    .process-title { font-size: 26px; letter-spacing: -0.8px; }
+    .process-subtitle { font-size: 14.5px; }
+    .process-subheading { font-size: 0.68rem; letter-spacing: 3px; }
+    .process-image-wrapper { width: 88%; }
+    .proc-card-body { padding: 16px 18px 20px; }
+    .proc-ghost-num { font-size: 72px; }
+    .proc-title { font-size: 15px; }
+    .proc-desc { font-size: 13px; }
+}

@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.elfsight.com	TRUE	/	FALSE	1999999999	elfsight_ab_group	B
+elfsight.com	TRUE	/	FALSE	1999999999	SameSite	None
+
