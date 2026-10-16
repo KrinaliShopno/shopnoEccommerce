@@ -887,16 +887,53 @@
             }
 
             @keyframes dreamPhase {
-                0%, 10% { opacity: 0; filter: blur(8px) brightness(1.2); transform: scale(1.05); }
-                20%, 45% { opacity: 1; filter: blur(0) brightness(1); transform: scale(1); }
-                55%, 90% { opacity: 0; filter: blur(0); transform: scale(1); }
-                100% { opacity: 0; filter: blur(8px) brightness(1.2); transform: scale(1.05); }
+
+                0%,
+                10% {
+                    opacity: 0;
+                    filter: blur(8px) brightness(1.2);
+                    transform: scale(1.05);
+                }
+
+                20%,
+                45% {
+                    opacity: 1;
+                    filter: blur(0) brightness(1);
+                    transform: scale(1);
+                }
+
+                55%,
+                90% {
+                    opacity: 0;
+                    filter: blur(0);
+                    transform: scale(1);
+                }
+
+                100% {
+                    opacity: 0;
+                    filter: blur(8px) brightness(1.2);
+                    transform: scale(1.05);
+                }
             }
 
             @keyframes happyPhase {
-                0%, 45% { opacity: 0; transform: scale(0.95); }
-                55%, 90% { opacity: 1; transform: scale(1); }
-                100% { opacity: 0; transform: scale(0.95); }
+
+                0%,
+                45% {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+
+                55%,
+                90% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
             }
 
             @media (max-width: 991px) {
@@ -1551,7 +1588,7 @@
                     font-size: 12px;
                     font-weight: 700;
                     color: var(--text-tertiary);
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     letter-spacing: 1.5px;
                     margin: 0;
                     text-align: center;

@@ -6,13 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 – Page Not Found | CodeLock Solutions</title>
-  <meta name="description" content="Oops! The page you're looking for doesn't exist. Return to CodeLock Solutions homepage." />
+  <meta name="description"
+    content="Oops! The page you're looking for doesn't exist. Return to CodeLock Solutions homepage." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -32,7 +37,8 @@
       --card-bg: rgba(255, 255, 255, 0.03);
     }
 
-    html, body {
+    html,
+    body {
       height: 100%;
       overflow-x: hidden;
     }
@@ -71,28 +77,44 @@
       z-index: 0;
       animation: orbFloat 8s ease-in-out infinite;
     }
+
     .orb-1 {
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(79,142,247,0.18) 0%, transparent 70%);
-      top: -150px; left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79, 142, 247, 0.18) 0%, transparent 70%);
+      top: -150px;
+      left: -150px;
       animation-delay: 0s;
     }
+
     .orb-2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
-      bottom: -100px; right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+      bottom: -100px;
+      right: -100px;
       animation-delay: -3s;
     }
+
     .orb-3 {
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 70%);
-      top: 50%; right: 20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+      top: 50%;
+      right: 20%;
       animation-delay: -5s;
     }
 
     @keyframes orbFloat {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
+
+      0%,
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+
+      50% {
+        transform: translateY(-30px) scale(1.05);
+      }
     }
 
     /* ─── Main Container ─── */
@@ -122,17 +144,20 @@
       backdrop-filter: blur(10px);
       animation: fadeSlideDown 0.8s ease both;
     }
+
     .brand-badge .lock-icon {
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       fill: var(--accent-blue);
     }
+
     .brand-badge span {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--accent-blue);
       letter-spacing: 0.08em;
-      text-transform: uppercase;
+      text-transform: capitalize;
     }
 
     /* ─── 404 SVG Illustration ─── */
@@ -145,55 +170,76 @@
     .four-o-four-svg {
       width: min(520px, 90vw);
       height: auto;
-      filter: drop-shadow(0 0 60px rgba(79,142,247,0.2));
+      filter: drop-shadow(0 0 60px rgba(79, 142, 247, 0.2));
     }
 
     /* SVG Number animations */
     .digit {
       animation: digitPulse 3s ease-in-out infinite;
     }
+
     .digit-zero {
       animation-delay: -1.5s;
     }
 
     @keyframes digitPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.75; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.75;
+      }
     }
 
     /* ─── Floating particles in SVG area ─── */
     .particle-ring {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 380px; height: 380px;
+      width: 380px;
+      height: 380px;
       border-radius: 50%;
       border: 1px dashed rgba(79, 142, 247, 0.2);
       animation: spinRing 20s linear infinite;
       pointer-events: none;
     }
+
     .particle-ring::before {
       content: '';
       position: absolute;
-      top: -5px; left: 50%;
-      width: 10px; height: 10px;
+      top: -5px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
       background: var(--accent-blue);
       border-radius: 50%;
       box-shadow: 0 0 15px var(--accent-blue);
     }
+
     .particle-ring-2 {
-      width: 280px; height: 280px;
+      width: 280px;
+      height: 280px;
       border-color: rgba(168, 85, 247, 0.2);
       animation: spinRing 14s linear infinite reverse;
     }
+
     .particle-ring-2::before {
       background: var(--accent-purple);
       box-shadow: 0 0 15px var(--accent-purple);
     }
 
     @keyframes spinRing {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to   { transform: translate(-50%, -50%) rotate(360deg); }
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
     }
 
     /* ─── Text Content ─── */
@@ -202,7 +248,7 @@
       font-size: clamp(0.8rem, 2vw, 1rem);
       font-weight: 600;
       letter-spacing: 0.3em;
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: var(--accent-orange);
       margin-bottom: 1rem;
       animation: fadeSlideUp 0.9s ease 0.2s both;
@@ -217,6 +263,7 @@
       margin-bottom: 1.25rem;
       animation: fadeSlideUp 0.9s ease 0.3s both;
     }
+
     .headline .gradient-text {
       background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
       -webkit-background-clip: text;
@@ -258,23 +305,34 @@
       position: relative;
       overflow: hidden;
     }
+
     .btn::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .btn:hover::before { opacity: 1; }
-    .btn:hover { transform: translateY(-3px); }
-    .btn:active { transform: translateY(0px) scale(0.97); }
+
+    .btn:hover::before {
+      opacity: 1;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn:active {
+      transform: translateY(0px) scale(0.97);
+    }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent-blue), #6366f1);
       color: #fff;
       box-shadow: 0 8px 32px rgba(79, 142, 247, 0.35);
     }
+
     .btn-primary:hover {
       box-shadow: 0 12px 40px rgba(79, 142, 247, 0.5);
     }
@@ -282,9 +340,10 @@
     .btn-ghost {
       background: var(--card-bg);
       color: var(--text-secondary);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
     }
+
     .btn-ghost:hover {
       color: var(--text-primary);
       border-color: rgba(79, 142, 247, 0.4);
@@ -292,7 +351,8 @@
     }
 
     .btn svg {
-      width: 18px; height: 18px;
+      width: 18px;
+      height: 18px;
       flex-shrink: 0;
     }
 
@@ -311,12 +371,13 @@
       align-items: center;
       gap: 10px;
       background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 14px;
       padding: 14px 20px;
       backdrop-filter: blur(12px);
       transition: all 0.3s ease;
     }
+
     .status-card:hover {
       border-color: var(--border-glow);
       transform: translateY(-2px);
@@ -324,16 +385,27 @@
     }
 
     .status-dot {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #22c55e;
       box-shadow: 0 0 8px #22c55e;
       animation: blink 2s ease-in-out infinite;
       flex-shrink: 0;
     }
+
     @keyframes blink {
-      0%, 100% { opacity: 1; box-shadow: 0 0 8px #22c55e; }
-      50% { opacity: 0.5; box-shadow: 0 0 3px #22c55e; }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 8px #22c55e;
+      }
+
+      50% {
+        opacity: 0.5;
+        box-shadow: 0 0 3px #22c55e;
+      }
     }
 
     .status-card .label {
@@ -341,6 +413,7 @@
       color: var(--text-muted);
       font-weight: 500;
     }
+
     .status-card .value {
       font-size: 0.85rem;
       color: var(--text-secondary);
@@ -354,37 +427,75 @@
       color: var(--text-muted);
       animation: fadeSlideUp 0.9s ease 0.7s both;
     }
+
     .footer-note a {
       color: var(--accent-blue);
       text-decoration: none;
       transition: color 0.2s;
     }
+
     .footer-note a:hover {
       color: var(--accent-purple);
     }
 
     /* ─── Keyframes ─── */
     @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ─── Responsive ─── */
     @media (max-width: 480px) {
-      .particle-ring  { width: 260px; height: 260px; }
-      .particle-ring-2{ width: 180px; height: 180px; }
-      .btn-group { flex-direction: column; align-items: center; }
-      .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .particle-ring {
+        width: 260px;
+        height: 260px;
+      }
+
+      .particle-ring-2 {
+        width: 180px;
+        height: 180px;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
     }
 
     /* ─── Scanline shimmer on 404 text ─── */
     @keyframes shimmer {
-      0%   { background-position: -400px 0; }
-      100% { background-position: 400px 0; }
+      0% {
+        background-position: -400px 0;
+      }
+
+      100% {
+        background-position: 400px 0;
+      }
     }
   </style>
 </head>
@@ -401,7 +512,8 @@
     <!-- Brand Badge -->
     <div class="brand-badge">
       <svg class="lock-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 10V8A6 6 0 0 0 6 8v2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1zM8 8a4 4 0 0 1 8 0v2H8V8zm5 8.72V19h-2v-2.28A2 2 0 1 1 13 16.72z"/>
+        <path
+          d="M18 10V8A6 6 0 0 0 6 8v2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V11a1 1 0 0 0-1-1zM8 8a4 4 0 0 1 8 0v2H8V8zm5 8.72V19h-2v-2.28A2 2 0 1 1 13 16.72z" />
       </svg>
       <span>CodeLock Solutions</span>
     </div>
@@ -412,79 +524,100 @@
       <div class="particle-ring"></div>
       <div class="particle-ring particle-ring-2"></div>
 
-      <svg class="four-o-four-svg" viewBox="0 0 520 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <svg class="four-o-four-svg" viewBox="0 0 520 220" fill="none" xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true">
         <defs>
           <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#4f8ef7"/>
-            <stop offset="100%" stop-color="#6366f1"/>
+            <stop offset="0%" stop-color="#4f8ef7" />
+            <stop offset="100%" stop-color="#6366f1" />
           </linearGradient>
           <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#a855f7"/>
-            <stop offset="100%" stop-color="#ec4899"/>
+            <stop offset="0%" stop-color="#a855f7" />
+            <stop offset="100%" stop-color="#ec4899" />
           </linearGradient>
           <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#06b6d4"/>
-            <stop offset="100%" stop-color="#4f8ef7"/>
+            <stop offset="0%" stop-color="#06b6d4" />
+            <stop offset="100%" stop-color="#4f8ef7" />
           </linearGradient>
           <filter id="glow">
-            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            <feGaussianBlur stdDeviation="6" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
           <filter id="softGlow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
         </defs>
 
         <!-- Background subtle shapes -->
-        <ellipse cx="260" cy="110" rx="220" ry="90" fill="rgba(79,142,247,0.04)" rx="220" ry="90"/>
+        <ellipse cx="260" cy="110" rx="220" ry="90" fill="rgba(79,142,247,0.04)" rx="220" ry="90" />
 
         <!-- LEFT "4" -->
         <g class="digit" filter="url(#glow)">
           <!-- vertical bar left -->
-          <rect x="38" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
+          <rect x="38" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9" />
           <!-- horizontal bar -->
-          <rect x="38" y="105" width="95" height="22" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
+          <rect x="38" y="105" width="95" height="22" rx="8" fill="url(#blueGrad)" opacity="0.9" />
           <!-- vertical bar right -->
-          <rect x="111" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
+          <rect x="111" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9" />
           <!-- diagonal connecting cut -->
-          <polygon points="38,30 60,30 111,105 89,105" fill="url(#cyanGrad)" opacity="0.5"/>
+          <polygon points="38,30 60,30 111,105 89,105" fill="url(#cyanGrad)" opacity="0.5" />
           <!-- accent line -->
-          <line x1="49" y1="150" x2="133" y2="150" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          <line x1="49" y1="150" x2="133" y2="150" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round"
+            opacity="0.3" />
         </g>
 
         <!-- CENTER "0" -->
         <g class="digit digit-zero" filter="url(#glow)">
           <!-- Outer ring -->
-          <ellipse cx="260" cy="110" rx="82" ry="90" fill="none" stroke="url(#purpleGrad)" stroke-width="22" opacity="0.9"/>
+          <ellipse cx="260" cy="110" rx="82" ry="90" fill="none" stroke="url(#purpleGrad)" stroke-width="22"
+            opacity="0.9" />
           <!-- Inner cutout shine -->
-          <ellipse cx="248" cy="88" rx="20" ry="12" fill="rgba(255,255,255,0.07)" transform="rotate(-30,248,88)"/>
+          <ellipse cx="248" cy="88" rx="20" ry="12" fill="rgba(255,255,255,0.07)" transform="rotate(-30,248,88)" />
           <!-- Decorative cross lines -->
-          <line x1="185" y1="110" x2="335" y2="110" stroke="rgba(168,85,247,0.25)" stroke-width="1.5" stroke-dasharray="4 6"/>
-          <line x1="260" y1="25"  x2="260" y2="195" stroke="rgba(168,85,247,0.25)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="185" y1="110" x2="335" y2="110" stroke="rgba(168,85,247,0.25)" stroke-width="1.5"
+            stroke-dasharray="4 6" />
+          <line x1="260" y1="25" x2="260" y2="195" stroke="rgba(168,85,247,0.25)" stroke-width="1.5"
+            stroke-dasharray="4 6" />
           <!-- Corner dots -->
-          <circle cx="187" cy="74"  r="4" fill="#a855f7" opacity="0.6" filter="url(#softGlow)"/>
-          <circle cx="333" cy="145" r="4" fill="#a855f7" opacity="0.6" filter="url(#softGlow)"/>
+          <circle cx="187" cy="74" r="4" fill="#a855f7" opacity="0.6" filter="url(#softGlow)" />
+          <circle cx="333" cy="145" r="4" fill="#a855f7" opacity="0.6" filter="url(#softGlow)" />
         </g>
 
         <!-- RIGHT "4" -->
         <g class="digit" filter="url(#glow)">
-          <rect x="368" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
-          <rect x="368" y="105" width="95" height="22" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
-          <rect x="441" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9"/>
-          <polygon points="368,30 390,30 441,105 419,105" fill="url(#cyanGrad)" opacity="0.5"/>
-          <line x1="379" y1="150" x2="463" y2="150" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          <rect x="368" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9" />
+          <rect x="368" y="105" width="95" height="22" rx="8" fill="url(#blueGrad)" opacity="0.9" />
+          <rect x="441" y="30" width="22" height="120" rx="8" fill="url(#blueGrad)" opacity="0.9" />
+          <polygon points="368,30 390,30 441,105 419,105" fill="url(#cyanGrad)" opacity="0.5" />
+          <line x1="379" y1="150" x2="463" y2="150" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round"
+            opacity="0.3" />
         </g>
 
         <!-- Floating micro dots -->
-        <circle cx="160" cy="55"  r="3" fill="#06b6d4" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/></circle>
-        <circle cx="360" cy="170" r="3" fill="#f97316" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="3.1s" repeatCount="indefinite"/></circle>
-        <circle cx="80"  cy="180" r="2" fill="#a855f7" opacity="0.4"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s"   repeatCount="indefinite"/></circle>
-        <circle cx="440" cy="45"  r="2" fill="#4f8ef7" opacity="0.4"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.7s" repeatCount="indefinite"/></circle>
+        <circle cx="160" cy="55" r="3" fill="#06b6d4" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="360" cy="170" r="3" fill="#f97316" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="3.1s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="80" cy="180" r="2" fill="#a855f7" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="440" cy="45" r="2" fill="#4f8ef7" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.7s" repeatCount="indefinite" />
+        </circle>
 
         <!-- Bottom dotted line decoration -->
-        <line x1="60" y1="200" x2="460" y2="200" stroke="rgba(79,142,247,0.15)" stroke-width="1" stroke-dasharray="6 10"/>
-        <circle cx="260" cy="200" r="4" fill="rgba(79,142,247,0.4)" filter="url(#softGlow)"/>
+        <line x1="60" y1="200" x2="460" y2="200" stroke="rgba(79,142,247,0.15)" stroke-width="1"
+          stroke-dasharray="6 10" />
+        <circle cx="260" cy="200" r="4" fill="rgba(79,142,247,0.4)" filter="url(#softGlow)" />
       </svg>
     </div>
 
@@ -493,7 +626,7 @@
 
     <!-- Headline -->
     <h1 class="headline">
-      Looks like this page<br/>
+      Looks like this page<br />
       <span class="gradient-text">got lost in the code</span>
     </h1>
 
@@ -506,14 +639,17 @@
     <!-- CTA Buttons -->
     <div class="btn-group">
       <a href="https://codelocksolutions.com" class="btn btn-primary" id="go-home-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M3 12L12 3l9 9" />
+          <path d="M9 21V12h6v9" />
         </svg>
         Go to Homepage
       </a>
       <a href="https://codelocksolutions.com/contact" class="btn btn-ghost" id="contact-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
         Contact Support
       </a>
@@ -529,8 +665,10 @@
         </div>
       </div>
       <div class="status-card">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8ef7" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
         </svg>
         <div>
           <div class="label">Avg. Response</div>
@@ -538,8 +676,9 @@
         </div>
       </div>
       <div class="status-card">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
         <div>
           <div class="label">Shopify Partner</div>
@@ -559,4 +698,5 @@
   </main>
 
 </body>
+
 </html>

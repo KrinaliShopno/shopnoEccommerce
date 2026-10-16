@@ -51,8 +51,15 @@
 }
 
 @keyframes blobPulse {
-    0% { transform: translateY(-50%) scale(1); opacity: 0.8; }
-    100% { transform: translateY(-50%) scale(1.15) translate(20px, 20px); opacity: 1; }
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-50%) scale(1.15) translate(20px, 20px);
+        opacity: 1;
+    }
 }
 
 /* Floating Graphics orbit panel */
@@ -68,7 +75,8 @@
 }
 
 .orbit-path-svg {
-    display: none; /* Hide messy overlapping lines */
+    display: none;
+    /* Hide messy overlapping lines */
 }
 
 .orbit-wire {
@@ -209,7 +217,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 12px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .projects-text-content .section-headline {
@@ -472,7 +480,7 @@
     letter-spacing: 0.5px;
     text-decoration: none !important;
     transition: gap 0.3s ease;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .case-study-link:hover {
@@ -567,7 +575,7 @@
     font-weight: 700;
     color: #6b7280;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 [data-theme="dark"] .mock-badge-lbl {

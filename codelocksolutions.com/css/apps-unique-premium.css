@@ -1,0 +1,887 @@
+/* ==========================================================================
+   SHOPNO ECOMMERCE - UNIQUE & PROFESSIONAL SHOPIFY APPS MASTER STYLES
+   Award-winning agency aesthetics: multi-layer ambient studio atmosphere,
+   executive frosted glass console, illuminated 3D squircle app pods,
+   luminous connecting laser spine with traveling photon, and kinetic hover physics.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+/* ── 1. Section Atmosphere & Ambient Canvas ───────────────────────── */
+.shopify-apps-section {
+    position: relative !important;
+    padding: 120px 0 !important;
+    background: radial-gradient(130% 90% at 85% 15%, #fbf9f4 0%, #f6f3ea 40%, #edf1f8 100%) !important;
+    overflow: hidden !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: #0f172a !important;
+    transition: background 0.35s ease !important;
+}
+
+[data-theme="dark"] .shopify-apps-section {
+    background: radial-gradient(130% 90% at 85% 15%, #0d1322 0%, #080c14 45%, #04060b 100%) !important;
+    color: #f8fafc !important;
+}
+
+/* Ambient Canvas Background System */
+.shopify-apps-ambient-canvas {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+/* Ambient Radiant Orbs */
+.ambient-orb.orb-amber {
+    position: absolute !important;
+    top: -60px !important;
+    right: -80px !important;
+    width: 680px !important;
+    height: 680px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.34) 0%, rgba(245, 158, 11, 0.12) 42%, transparent 70%) !important;
+    filter: blur(95px) !important;
+    animation: orbFloatAmber 16s ease-in-out infinite alternate !important;
+}
+
+.ambient-orb.orb-indigo {
+    position: absolute !important;
+    bottom: -100px !important;
+    left: -80px !important;
+    width: 640px !important;
+    height: 640px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.24) 0%, rgba(139, 92, 246, 0.09) 45%, transparent 70%) !important;
+    filter: blur(100px) !important;
+    animation: orbFloatIndigo 20s ease-in-out infinite alternate !important;
+}
+
+.ambient-orb.orb-emerald {
+    position: absolute !important;
+    top: 35% !important;
+    right: 22% !important;
+    width: 480px !important;
+    height: 480px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 65%) !important;
+    filter: blur(85px) !important;
+}
+
+@keyframes orbFloatAmber {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-40px, 30px) scale(1.08); }
+}
+
+@keyframes orbFloatIndigo {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, -40px) scale(1.1); }
+}
+
+/* Engineering Matrix Cross-Dot Grid Overlay */
+.matrix-grid-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background-image: radial-gradient(circle, rgba(15, 23, 42, 0.08) 1.25px, transparent 1.25px) !important;
+    background-size: 26px 26px !important;
+    mask-image: radial-gradient(ellipse 90% 75% at 75% 50%, black 20%, transparent 85%) !important;
+    -webkit-mask-image: radial-gradient(ellipse 90% 75% at 75% 50%, black 20%, transparent 85%) !important;
+    opacity: 0.9 !important;
+}
+
+[data-theme="dark"] .matrix-grid-overlay {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1.25px, transparent 1.25px) !important;
+}
+
+/* ── 2. Container Layout ─────────────────────────────────────────── */
+.apps-container.container {
+    position: relative !important;
+    z-index: 2 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1.18fr !important;
+    gap: 55px !important;
+    align-items: center !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* ── 3. Left Executive Master Console ───────────────────────────── */
+.apps-content-wrapper {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border-radius: 34px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+    padding: 48px 42px !important;
+    box-shadow: 0 30px 75px -15px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(245, 158, 11, 0.2), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+[data-theme="dark"] .apps-content-wrapper {
+    background: rgba(15, 23, 42, 0.88) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 30px 75px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(245, 158, 11, 0.25) !important;
+}
+
+/* Top Dynamic Highlight Bar */
+.apps-content-wrapper::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #ea580c 100%) !important;
+    border-radius: 34px 34px 0 0 !important;
+}
+
+/* Specular Corner Light Flare */
+.apps-content-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 220px !important;
+    height: 220px !important;
+    background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.16) 0%, transparent 68%) !important;
+    pointer-events: none !important;
+}
+
+/* Left Card Pill Badge */
+.apps-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 6px 16px 6px 12px !important;
+    background: linear-gradient(135deg, rgba(254, 243, 199, 0.85) 0%, rgba(253, 230, 138, 0.6) 100%) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 4px 14px -2px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    margin-bottom: 24px !important;
+    width: fit-content !important;
+}
+
+.apps-badge::before {
+    display: none !important;
+    content: none !important;
+}
+
+.apps-badge .badge-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #10b981 !important;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.75) !important;
+    animation: livePulseGlow 2s infinite !important;
+    flex-shrink: 0 !important;
+}
+
+@keyframes livePulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.75);
+    }
+    70% {
+        box-shadow: 0 0 0 9px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.apps-badge .badge-text {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    color: #92400e !important;
+}
+
+.apps-badge .badge-sparkle {
+    font-size: 11px !important;
+    color: #d97706 !important;
+}
+
+/* Left Card Headline */
+.apps-headline {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+    font-size: clamp(34px, 3.8vw, 46px) !important;
+    font-weight: 850 !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.03em !important;
+    color: #0f172a !important;
+    margin-bottom: 20px !important;
+}
+
+[data-theme="dark"] .apps-headline {
+    color: #f8fafc !important;
+}
+
+.apps-headline .highlight-scale,
+.apps-headline span {
+    background: linear-gradient(135deg, #d97706 0%, #ea580c 40%, #f59e0b 75%, #fbbf24 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    filter: drop-shadow(0 3px 14px rgba(245, 158, 11, 0.32)) !important;
+    display: inline !important;
+}
+
+/* Left Card Description */
+.apps-description {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 15.5px !important;
+    line-height: 1.76 !important;
+    color: #475569 !important;
+    font-weight: 460 !important;
+    margin-bottom: 28px !important;
+}
+
+[data-theme="dark"] .apps-description {
+    color: #94a3b8 !important;
+}
+
+.apps-description::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* ── 3B. Executive Stats Console ────────────────────────────────── */
+.apps-stats-dashboard {
+    display: flex !important;
+    align-items: center !important;
+    gap: 26px !important;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 243, 199, 0.35) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.28) !important;
+    border-radius: 22px !important;
+    padding: 18px 28px !important;
+    box-shadow: 0 12px 30px -8px rgba(245, 158, 11, 0.16), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    margin-bottom: 22px !important;
+    width: fit-content !important;
+}
+
+[data-theme="dark"] .apps-stats-dashboard {
+    background: rgba(15, 23, 42, 0.92) !important;
+    border-color: rgba(245, 158, 11, 0.28) !important;
+    box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.stats-pod {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.stat-top {
+    display: flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    margin-bottom: 3px !important;
+}
+
+.stat-number {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    letter-spacing: -0.6px !important;
+    line-height: 1 !important;
+}
+
+[data-theme="dark"] .stat-number {
+    color: #f8fafc !important;
+}
+
+.stat-growth-tag {
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    background: #dcfce7 !important;
+    color: #15803d !important;
+    padding: 2.5px 8px !important;
+    border-radius: 9999px !important;
+    letter-spacing: 0.3px !important;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.18) !important;
+}
+
+.stat-growth-bar {
+    width: 95px !important;
+    height: 4px !important;
+    background: rgba(226, 232, 240, 0.8) !important;
+    border-radius: 9999px !important;
+    margin-top: 6px !important;
+    overflow: hidden !important;
+}
+
+.growth-bar-fill {
+    width: 85% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, #10b981, #34d399) !important;
+    border-radius: 9999px !important;
+    animation: barGrow 1.5s ease-out forwards !important;
+}
+
+@keyframes barGrow {
+    from { width: 0; }
+    to { width: 85%; }
+}
+
+.stat-stars-tag {
+    font-size: 14px !important;
+    color: #f59e0b !important;
+    letter-spacing: 1.5px !important;
+    text-shadow: 0 1px 6px rgba(245, 158, 11, 0.35) !important;
+}
+
+.stat-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    color: #64748b !important;
+}
+
+.stat-sub-verified {
+    font-size: 10.5px !important;
+    font-weight: 750 !important;
+    color: #10b981 !important;
+    margin-top: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.stats-pod-divider {
+    width: 1.5px !important;
+    height: 46px !important;
+    background: linear-gradient(to bottom, transparent, rgba(203, 213, 225, 0.95), transparent) !important;
+}
+
+/* Verified Trust Strip */
+.apps-trust-strip {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    padding-top: 6px !important;
+}
+
+.apps-trust-strip .fa-check-circle {
+    color: #10b981 !important;
+}
+
+.apps-trust-strip .fa-shield {
+    color: #f59e0b !important;
+}
+
+.trust-dot {
+    color: #cbd5e1 !important;
+}
+
+/* ── 4. Right Interactive App Feature Cards ──────────────────────── */
+.apps-cards-wrapper {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    padding: 10px 0 10px 18px !important;
+}
+
+/* Glowing Connecting Laser Spine */
+.apps-cards-wrapper::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 36px !important;
+    top: 45px !important;
+    bottom: 45px !important;
+    width: 3.5px !important;
+    background: linear-gradient(180deg, #f59e0b 0%, #10b981 50%, #6366f1 100%) !important;
+    border-radius: 9999px !important;
+    z-index: 0 !important;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* Photon Traveling Beam along the Spine */
+.apps-cards-wrapper::after {
+    content: '' !important;
+    position: absolute !important;
+    left: 35px !important;
+    top: 45px !important;
+    width: 5.5px !important;
+    height: 45px !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(180deg, transparent, #ffffff, transparent) !important;
+    filter: drop-shadow(0 0 8px #fbbf24) !important;
+    z-index: 1 !important;
+    animation: photonBeam 3.6s infinite ease-in-out !important;
+    pointer-events: none !important;
+}
+
+@keyframes photonBeam {
+    0% { top: 45px; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: calc(100% - 90px); opacity: 0; }
+}
+
+.app-card-wrapper {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 2 !important;
+    padding: 4px 0 !important;
+}
+
+/* Step Node Circle on Spine */
+.card-step-node {
+    position: relative !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12) !important;
+    border: 2.5px solid #f59e0b !important;
+    color: #b45309 !important;
+    margin-right: 22px !important;
+    z-index: 3 !important;
+    transition: transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.card-step-node .node-num {
+    font-size: 13px !important;
+    font-weight: 850 !important;
+}
+
+.node-pulse-ring {
+    position: absolute !important;
+    inset: -4px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid currentColor !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: all 0.35s ease !important;
+}
+
+.card-theme-emerald .card-step-node {
+    border-color: #10b981 !important;
+    color: #047857 !important;
+}
+
+.card-theme-indigo .card-step-node {
+    border-color: #6366f1 !important;
+    color: #4338ca !important;
+}
+
+.app-card-wrapper:hover .card-step-node {
+    transform: scale(1.12) !important;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.28) !important;
+}
+
+.card-theme-emerald.app-card-wrapper:hover .card-step-node {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.28) !important;
+}
+
+.card-theme-indigo.app-card-wrapper:hover .card-step-node {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.28) !important;
+}
+
+.app-card-wrapper:hover .node-pulse-ring {
+    opacity: 0.65 !important;
+    animation: nodePulseEffect 1.5s infinite !important;
+}
+
+@keyframes nodePulseEffect {
+    0% { transform: scale(1); opacity: 0.65; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* The Clickable App Card */
+.app-card {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 22px !important;
+    padding: 24px 28px !important;
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(24px) saturate(190%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+    border-radius: 26px !important;
+    box-shadow: 0 14px 35px -10px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(226, 232, 240, 0.6) !important;
+    text-decoration: none !important;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                background 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    will-change: transform, box-shadow !important;
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+/* Theme Distinct Ambient Backgrounds */
+.card-theme-amber .app-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 243, 199, 0.35) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.28) !important;
+    box-shadow: 0 14px 35px -10px rgba(245, 158, 11, 0.1), 0 0 0 1px rgba(245, 158, 11, 0.15) !important;
+}
+
+.card-theme-emerald .app-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(209, 250, 229, 0.35) 100%) !important;
+    border: 1.5px solid rgba(16, 185, 129, 0.28) !important;
+    box-shadow: 0 14px 35px -10px rgba(16, 185, 129, 0.1), 0 0 0 1px rgba(16, 185, 129, 0.15) !important;
+}
+
+.card-theme-indigo .app-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(224, 231, 255, 0.35) 100%) !important;
+    border: 1.5px solid rgba(99, 102, 241, 0.28) !important;
+    box-shadow: 0 14px 35px -10px rgba(99, 102, 241, 0.1), 0 0 0 1px rgba(99, 102, 241, 0.15) !important;
+}
+
+[data-theme="dark"] .app-card {
+    background: rgba(15, 23, 42, 0.88) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(245, 158, 11, 0.18) !important;
+}
+
+[data-theme="dark"] .card-theme-amber .app-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(245, 158, 11, 0.12) 100%) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+[data-theme="dark"] .card-theme-emerald .app-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(16, 185, 129, 0.12) 100%) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+[data-theme="dark"] .card-theme-indigo .app-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(99, 102, 241, 0.12) 100%) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+}
+
+.trust-svg-emerald {
+    color: #10b981 !important;
+}
+
+.trust-svg-amber {
+    color: #f59e0b !important;
+}
+
+/* Silky Smooth Card Hover Physics */
+.card-theme-amber.app-card-wrapper:hover .app-card,
+.card-theme-amber .app-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 45px -10px rgba(245, 158, 11, 0.24), 0 0 0 2px rgba(245, 158, 11, 0.45) !important;
+    background: #ffffff !important;
+}
+
+.card-theme-emerald.app-card-wrapper:hover .app-card,
+.card-theme-emerald .app-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 45px -10px rgba(16, 185, 129, 0.24), 0 0 0 2px rgba(16, 185, 129, 0.45) !important;
+    background: #ffffff !important;
+}
+
+.card-theme-indigo.app-card-wrapper:hover .app-card,
+.card-theme-indigo .app-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 20px 45px -10px rgba(99, 102, 241, 0.24), 0 0 0 2px rgba(99, 102, 241, 0.45) !important;
+    background: #ffffff !important;
+}
+
+/* 3D Illuminated App Icon Pod */
+.app-screenshot {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 22px !important;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 60%, #fde68a 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.35) !important;
+    box-shadow: 0 10px 24px -4px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    will-change: transform !important;
+}
+
+.card-theme-emerald .app-screenshot {
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 60%, #a7f3d0 100%) !important;
+    border-color: rgba(16, 185, 129, 0.35) !important;
+    box-shadow: 0 10px 24px -4px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+.card-theme-indigo .app-screenshot {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 60%, #c7d2fe 100%) !important;
+    border-color: rgba(99, 102, 241, 0.35) !important;
+    box-shadow: 0 10px 24px -4px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+.app-screenshot img {
+    width: 44px !important;
+    height: 44px !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.12)) !important;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    will-change: transform !important;
+}
+
+.app-card:hover .app-screenshot {
+    transform: scale(1.08) rotate(2deg) !important;
+}
+
+.app-card:hover .app-screenshot img {
+    transform: scale(1.06) !important;
+}
+
+/* App Details Column - Rock solid stable flex column */
+.app-details {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.card-header-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin-bottom: 4px !important;
+}
+
+.app-name {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 850 !important;
+    color: #0f172a !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+}
+
+[data-theme="dark"] .app-name {
+    color: #f8fafc !important;
+}
+
+.app-desc {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+    color: #64748b !important;
+    margin-top: 4px !important;
+    margin-bottom: 10px !important;
+}
+
+[data-theme="dark"] .app-desc {
+    color: #94a3b8 !important;
+}
+
+/* Feature Pills in Cards */
+.app-feature-pills {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+}
+
+.feat-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11.5px !important;
+    font-weight: 750 !important;
+    padding: 3.5px 11px !important;
+    border-radius: 9999px !important;
+    background: rgba(241, 245, 249, 0.92) !important;
+    color: #475569 !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    transition: background 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.card-theme-amber .app-card:hover .feat-pill {
+    background: #fffbeb !important;
+    color: #b45309 !important;
+    border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+.card-theme-emerald .app-card:hover .feat-pill {
+    background: #ecfdf5 !important;
+    color: #047857 !important;
+    border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+.card-theme-indigo .app-card:hover .feat-pill {
+    background: #eef2ff !important;
+    color: #4338ca !important;
+    border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+/* Badges on Cards */
+.badge-trending {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    color: #b45309 !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    padding: 3.5px 10px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2) !important;
+}
+
+.badge-popular {
+    background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
+    color: #15803d !important;
+    border: 1px solid rgba(16, 185, 129, 0.4) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    padding: 3.5px 10px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2) !important;
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+    color: #4338ca !important;
+    border: 1px solid rgba(99, 102, 241, 0.4) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 10.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    padding: 3.5px 10px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Action Arrow Button - Fixed Circular Action Button (No Layout Shift) */
+.app-arrow {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    min-height: 46px !important;
+    border-radius: 50% !important;
+    background: rgba(248, 250, 252, 0.95) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    color: #64748b !important;
+    flex-shrink: 0 !important;
+    transition: background 0.35s ease,
+                color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease,
+                transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    will-change: transform, background, box-shadow !important;
+}
+
+[data-theme="dark"] .app-arrow {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    color: #94a3b8 !important;
+}
+
+.app-arrow .arrow-label {
+    display: none !important;
+}
+
+.app-arrow svg {
+    width: 17px !important;
+    height: 17px !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+/* Card Hover -> Button illuminates and arrow micro-slides smoothly */
+.card-theme-amber.app-card-wrapper:hover .app-arrow,
+.card-theme-amber .app-card:hover .app-arrow {
+    background: #0f172a !important;
+    color: #f59e0b !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25), 0 0 0 2px rgba(245, 158, 11, 0.45) !important;
+}
+
+.card-theme-emerald.app-card-wrapper:hover .app-arrow,
+.card-theme-emerald .app-card:hover .app-arrow {
+    background: #0f172a !important;
+    color: #10b981 !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25), 0 0 0 2px rgba(16, 185, 129, 0.45) !important;
+}
+
+.card-theme-indigo.app-card-wrapper:hover .app-arrow,
+.card-theme-indigo .app-card:hover .app-arrow {
+    background: #0f172a !important;
+    color: #818cf8 !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25), 0 0 0 2px rgba(99, 102, 241, 0.45) !important;
+}
+
+.app-card-wrapper:hover .app-arrow svg,
+.app-card:hover .app-arrow svg {
+    transform: translateX(3px) !important;
+}
+
+/* ── 5. Responsive Design ─────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .apps-container.container {
+        grid-template-columns: 1fr !important;
+        gap: 45px !important;
+    }
+
+    .apps-content-wrapper {
+        padding: 38px 30px !important;
+    }
+
+    .apps-cards-wrapper::before,
+    .apps-cards-wrapper::after {
+        display: none !important;
+    }
+
+    .card-step-node {
+        display: none !important;
+    }
+
+    .apps-cards-wrapper {
+        padding-left: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .shopify-apps-section {
+        padding: 70px 0 !important;
+    }
+
+    .apps-headline {
+        font-size: 28px !important;
+    }
+
+    .app-card {
+        padding: 18px 20px !important;
+        gap: 16px !important;
+    }
+
+    .apps-stats-dashboard {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+
+    .stats-pod-divider {
+        display: none !important;
+    }
+}

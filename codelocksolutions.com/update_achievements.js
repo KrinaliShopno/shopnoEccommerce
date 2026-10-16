@@ -145,7 +145,7 @@ const newStyle = `<style>
                 color: var(--text-secondary);
                 line-height: 1.4;
                 font-weight: 700;
-                text-transform: uppercase;
+                text-transform: capitalize;
                 letter-spacing: 1.5px;
             }
 

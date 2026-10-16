@@ -58,7 +58,7 @@
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 14px;
     opacity: 0;
     transform: translateY(20px);
@@ -121,20 +121,30 @@
 }
 
 @media (max-width: 1400px) {
-    .team-grid { grid-template-columns: repeat(4, 1fr); }
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media (max-width: 991px) {
-    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 576px) {
+
     /* 2 cols even on mobile looks best for this design */
-    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 }
 
 /* =====================================================
@@ -165,8 +175,8 @@
 }
 
 [data-theme="dark"] .team-member {
-    background: rgba(255,255,255,0.03);
-    border-color: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Smooth lift on hover */
@@ -193,7 +203,7 @@
 }
 
 [data-theme="dark"] .team-image-wrapper {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .team-image {
@@ -244,8 +254,8 @@
 }
 
 .team-name {
-    font-size: 17px; 
-    font-weight: 800; 
+    font-size: 17px;
+    font-weight: 800;
     margin: 0;
     color: #0f172a;
     letter-spacing: -0.2px;
@@ -257,7 +267,8 @@
 }
 
 .team-member:hover .team-name {
-    color: #f59e0b; /* Accent orange on hover */
+    color: #f59e0b;
+    /* Accent orange on hover */
 }
 
 /* Role text (Was previously hidden, now elegantly displayed) */
@@ -266,7 +277,7 @@
     font-size: 12px;
     color: #64748b;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1px;
     margin-top: 6px;
     margin-bottom: 0;
@@ -286,7 +297,8 @@
     transform: translateX(-50%);
     width: 30px;
     height: 3px;
-    background: rgba(245, 158, 11, 0.5); /* Soft orange */
+    background: rgba(245, 158, 11, 0.5);
+    /* Soft orange */
     border-radius: 0 0 4px 4px;
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
 }
@@ -295,7 +307,8 @@
     width: 100%;
     border-radius: 0;
     height: 3px;
-    background: #f59e0b; /* Solid orange */
+    background: #f59e0b;
+    /* Solid orange */
 }
 
 /* Hide the old divider line under the name */
