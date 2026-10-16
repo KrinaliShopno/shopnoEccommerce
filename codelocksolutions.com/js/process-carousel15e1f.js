@@ -1,12 +1,12 @@
 /* ================================================================
-   process-carousel.js — Updated for new .process-card grid layout
+   process-carousel.js — Scroll Reveal & Interactive Flow
    ================================================================ */
 (function () {
     'use strict';
 
     /* ── Header element scroll-reveal ── */
     function initHeaderReveal(section) {
-        var els = section.querySelectorAll('.process-subheading, .process-title, .process-subtitle');
+        var els = section.querySelectorAll('.process-header-center, .process-subheading, .process-title, .process-subtitle, .proc-meta-ribbon');
         if (!els.length) return;
 
         if (!('IntersectionObserver' in window)) {
@@ -18,24 +18,21 @@
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('anim-in');
-                } else {
-                    entry.target.classList.remove('anim-in');
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.15 });
 
         els.forEach(function (el) { obs.observe(el); });
     }
 
-    /* ── Card Grid Scroll Reveal ── */
+    /* ── Card Grid & Callout Scroll Reveal ── */
     function initCardGrid(timeline) {
-        var grid  = timeline.querySelector('.process-cards-grid');
-        if (!grid) return; // fallback — no new grid found
+        var grid = timeline.querySelector('.process-cards-grid');
+        if (!grid) grid = timeline;
 
-        var cards = grid.querySelectorAll('.reveal-item');
-        if (!cards.length) {
-            // Make everything visible immediately as fallback
-            grid.querySelectorAll('.process-card').forEach(function (c) {
+        var items = timeline.querySelectorAll('.reveal-item');
+        if (!items.length) {
+            timeline.querySelectorAll('.process-card, .proc-bottom-callout').forEach(function (c) {
                 c.style.opacity = '1';
                 c.style.transform = 'none';
             });
@@ -43,26 +40,24 @@
         }
 
         if (!('IntersectionObserver' in window)) {
-            // No IntersectionObserver support — show all immediately
-            cards.forEach(function (card) { card.classList.add('reveal-active'); });
+            items.forEach(function (item) { item.classList.add('reveal-active'); });
             return;
         }
 
         var revealObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    // Staggered reveal — each card with a delay
-                    cards.forEach(function (card, i) {
+                    items.forEach(function (item, i) {
                         setTimeout(function () {
-                            card.classList.add('reveal-active');
-                        }, i * 140);
+                            item.classList.add('reveal-active');
+                        }, i * 110);
                     });
-                    revealObs.unobserve(entry.target); // trigger once only
+                    revealObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
-        revealObs.observe(grid);
+        revealObs.observe(timeline);
     }
 
     /* ── Boot ── */
@@ -71,8 +66,25 @@
             initHeaderReveal(section);
         });
 
-        document.querySelectorAll('.process-timeline').forEach(function (tl) {
+        document.querySelectorAll('.process-timeline, .proc-timeline-wrapper').forEach(function (tl) {
             initCardGrid(tl);
+        });
+
+        // Also reveal bottom callout if standalone
+        document.querySelectorAll('.proc-bottom-callout.reveal-item').forEach(function (callout) {
+            if (!('IntersectionObserver' in window)) {
+                callout.classList.add('reveal-active');
+                return;
+            }
+            var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            obs.observe(callout);
         });
     }
 
