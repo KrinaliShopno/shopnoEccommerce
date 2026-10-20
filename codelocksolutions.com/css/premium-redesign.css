@@ -347,9 +347,9 @@ body {
 
 .trust-item .trust-number {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--dark-900);
-    font-family: 'Syne', sans-serif;
+    /* font-family: 'Syne', sans-serif; */
 }
 
 .trust-item .trust-label {
@@ -543,10 +543,10 @@ body {
 
 .team-name {
     font-size: 17px !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     color: var(--dark-900) !important;
     margin-bottom: 4px !important;
-    font-family: 'Syne', sans-serif !important;
+    /* font-family: 'Syne', sans-serif !important; */
 }
 
 .team-role {
@@ -808,11 +808,11 @@ body {
 
 .blog-title {
     font-size: 17px !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     color: var(--dark-900) !important;
     line-height: 1.42 !important;
     margin-bottom: 10px !important;
-    font-family: 'Syne', sans-serif !important;
+    /* font-family: 'Syne', sans-serif !important; */
     transition: color 0.3s ease !important;
 }
 
@@ -901,7 +901,7 @@ body {
 }
 
 .enquiry-form-container button[type="submit"] {
-    background: linear-gradient(120deg, var(--gold-500) 0%, var(--gold-600) 100%) !important;
+    background: #ebb435 !important;
     color: var(--dark-950) !important;
     font-weight: 800 !important;
     border-radius: 9999px !important;
@@ -1038,7 +1038,7 @@ body {
 }
 
 .container {
-    /* max-width: 1320px !important; */
+    max-width: 1440px !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
 }

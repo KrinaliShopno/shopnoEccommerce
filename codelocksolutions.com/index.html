@@ -5099,7 +5099,7 @@
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     gap: 24px;
-                    max-width: 1200px;
+                    max-width: 1440px;
                     margin: 0 auto 40px;
                     position: relative;
                     z-index: 2;
@@ -6069,50 +6069,31 @@
 
                     <!-- Right Side Form -->
                     <div class="enquiry-form-container">
-                        <form class="enquiry-form">
+                        <form class="enquiry-form" id="whatsapp-enquiry-form">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>YOUR NAME <span class="req">*</span></label>
-                                    <input type="text" placeholder="John Doe" required>
+                                    <label for="enquiry-name">YOUR NAME <span class="req">*</span></label>
+                                    <input type="text" id="enquiry-name" name="name" placeholder="John Doe" required autocomplete="name">
                                 </div>
                                 <div class="form-group">
-                                    <label>COMPANY <span class="req">*</span></label>
-                                    <input type="text" placeholder="Acme Corp" required>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>EMAIL ADDRESS <span class="req">*</span></label>
-                                    <input type="email" placeholder="john@acme.com" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>PHONE <span class="req">*</span></label>
-                                    <input type="tel" placeholder="+1 (555) 000-0000" required>
+                                    <label for="enquiry-email">EMAIL ADDRESS <span class="req">*</span></label>
+                                    <input type="email" id="enquiry-email" name="email" placeholder="john@acme.com" required autocomplete="email">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label>BUSINESS TYPE <span class="req">*</span></label>
-                                <div class="select-wrapper">
-                                    <select required>
-                                        <option value="" disabled selected>Select your industry</option>
-                                        <option value="ecommerce">E-Commerce / Retail</option>
-                                        <option value="b2b">B2B Services</option>
-                                        <option value="saas">SaaS / Technology</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
+                                <label for="enquiry-phone">PHONE NUMBER <span class="req">*</span> <span style="font-size: 11px; font-weight: 600; color: #94a3b8; text-transform: none; letter-spacing: normal;">(10 Digits)</span></label>
+                                <input type="tel" id="enquiry-phone" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" minlength="10" pattern="[0-9]{10}" inputmode="numeric" required autocomplete="tel">
                             </div>
 
                             <div class="form-group">
-                                <label>HOW CAN WE HELP? <span class="req">*</span></label>
-                                <textarea rows="4"
+                                <label for="enquiry-message">HOW CAN WE HELP? <span class="req">*</span></label>
+                                <textarea id="enquiry-message" name="message" rows="4"
                                     placeholder="Tell us about your goals, current challenges, or specific services you're interested in..."
                                     required></textarea>
                             </div>
 
-                            <button type="submit" class="submit-btn">
+                            <button type="submit" class="submit-btn" id="enquiry-submit-btn">
                                 <span>Submit Enquiry</span>
                                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5"
                                     fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -6533,37 +6514,51 @@
                             </div>
                             <ul class="clean-link-list">
                                 <li>
-                                    <a href="index.html">
+                                    <a href="#hero-section">
                                         <span class="link-num">01</span>
                                         <span class="link-title">Home</span>
                                         <span class="link-arrow">→</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="about.html">
+                                    <a href="#about-us">
                                         <span class="link-num">02</span>
                                         <span class="link-title">About Us</span>
                                         <span class="link-arrow">→</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="services.html">
+                                    <a href="#services">
                                         <span class="link-num">03</span>
                                         <span class="link-title">Services</span>
                                         <span class="link-arrow">→</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="portfolio.html">
+                                    <a href="#projects">
                                         <span class="link-num">04</span>
-                                        <span class="link-title">Portfolio</span>
+                                        <span class="link-title">Projects</span>
                                         <span class="link-arrow">→</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="life.html">
+                                    <a href="#process">
                                         <span class="link-num">05</span>
-                                        <span class="link-title">Life @ Shopno</span>
+                                        <span class="link-title">Process</span>
+                                        <span class="link-arrow">→</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#blogs">
+                                        <span class="link-num">06</span>
+                                        <span class="link-title">Blogs</span>
+                                        <span class="link-arrow">→</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact">
+                                        <span class="link-num">07</span>
+                                        <span class="link-title">Contact</span>
                                         <span class="link-arrow">→</span>
                                     </a>
                                 </li>
@@ -6710,7 +6705,7 @@
                 .custom-footer .footer-container {
                     position: relative;
                     z-index: 2;
-                    max-width: 1280px !important;
+                    max-width: 1440px !important;
                     margin: 0 auto !important;
                     padding: 0 28px !important;
                     width: 100% !important;
@@ -7266,6 +7261,89 @@
     <link rel="stylesheet" type="text/css" href="css/premium-redesign.css?v=5" />
     <script src="js/unique-header.js"></script>
 
+    <!-- WhatsApp Enquiry Form Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const enquiryForm = document.getElementById('whatsapp-enquiry-form');
+            const phoneInput = document.getElementById('enquiry-phone');
+
+            if (phoneInput) {
+                // Strictly enforce numbers only and max 10 digits
+                phoneInput.addEventListener('input', function () {
+                    this.value = this.value.replace(/\D/g, '').slice(0, 10);
+                });
+
+                phoneInput.addEventListener('keypress', function (e) {
+                    // Prevent typing non-digits or typing after 10 digits
+                    if (!/\d/.test(e.key) || this.value.length >= 10) {
+                        e.preventDefault();
+                    }
+                });
+
+                phoneInput.addEventListener('paste', function (e) {
+                    setTimeout(() => {
+                        this.value = this.value.replace(/\D/g, '').slice(0, 10);
+                    }, 0);
+                });
+            }
+
+            if (enquiryForm) {
+                enquiryForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const nameInput = document.getElementById('enquiry-name');
+                    const emailInput = document.getElementById('enquiry-email');
+                    const messageInput = document.getElementById('enquiry-message');
+
+                    const name = nameInput ? nameInput.value.trim() : '';
+                    const email = emailInput ? emailInput.value.trim() : '';
+                    const phone = phoneInput ? phoneInput.value.trim() : '';
+                    const message = messageInput ? messageInput.value.trim() : '';
+
+                    if (!name) {
+                        alert('Please enter your name.');
+                        nameInput && nameInput.focus();
+                        return;
+                    }
+
+                    if (!email) {
+                        alert('Please enter your email address.');
+                        emailInput && emailInput.focus();
+                        return;
+                    }
+
+                    // Strict validation: exactly 10 digits
+                    if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) {
+                        alert('Please enter a valid 10-digit mobile number.');
+                        phoneInput && phoneInput.focus();
+                        return;
+                    }
+
+                    if (!message) {
+                        alert('Please enter your message.');
+                        messageInput && messageInput.focus();
+                        return;
+                    }
+
+                    // Target WhatsApp Number: +91 70162 68071
+                    const targetWhatsApp = '917016268071';
+                    const text = 
+`*New Website Enquiry* 🚀
+━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+📱 *Phone:* +91 ${phone}
+━━━━━━━━━━━━━━━━━━
+💬 *Message:*
+${message}`;
+
+                    const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetWhatsApp}&text=${encodeURIComponent(text)}`;
+                    
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+        });
+    </script>
 </body>
 
 <!-- Mirrored from codelocksolutions.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Oct 2026 04:51:21 GMT -->

@@ -11,7 +11,7 @@
         const mobileToggle = document.querySelector('.header-mobile-toggle');
         const mobileDrawer = document.querySelector('.mobile-nav-drawer');
         const backdrop = document.querySelector('.mobile-drawer-backdrop');
-        const allNavLinks = document.querySelectorAll('.nav-link-btn, .mobile-nav-link, .header-cta-button, .mobile-cta-btn');
+        const allNavLinks = document.querySelectorAll('.nav-link-btn, .mobile-nav-link, .header-cta-button, .mobile-cta-btn, .clean-link-list a, .footer-nav-link, .footer-link');
 
         // Target sections for scrollspy and smooth navigation
         const sectionMap = [

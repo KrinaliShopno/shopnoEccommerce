@@ -66,6 +66,7 @@ html {
     background: var(--hdr-bg-scrolled);
     border-bottom: 1px solid var(--hdr-border-scrolled);
     box-shadow: var(--hdr-shadow-scrolled);
+        padding: 10px;
 }
 
 .header-inner-wrap {
