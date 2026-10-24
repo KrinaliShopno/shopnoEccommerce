@@ -13598,7 +13598,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .owl-theme .owl-dots .owl-dot {
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -47088,5 +47088,147 @@ body {
   .popup-actions-grid {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+}
+
+/* ==========================================================================
+   UNIQUE CLIENT LOGO INFINITE MARQUEE (RIGHT-TO-LEFT DIRECT FLOATING STRIP)
+   ========================================================================== */
+.shopno-clients-marquee-section {
+  position: relative;
+  width: 100%;
+  padding: 24px 0 26px 0;
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.75) 0%, #ffffff 50%, rgba(248, 250, 252, 0.75) 100%);
+  border-top: 1px solid rgba(226, 232, 240, 0.75);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.75);
+  overflow: hidden;
+  z-index: 10;
+}
+
+[data-theme="dark"] .shopno-clients-marquee-section {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(15, 23, 42, 0.6) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Marquee Viewport with Soft Edge Masks */
+.marquee-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.marquee-track-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-track-inner {
+  display: flex;
+  align-items: center;
+  gap: 72px; /* Generous space between logos */
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+/* Right-to-Left Ultra-Slow Infinite Scroll */
+.marquee-row-rtl {
+  animation: scroll-rtl 70s linear infinite;
+}
+
+/* Pause on hover so user can interact */
+.marquee-viewport:hover .marquee-track-inner {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pure Floating Brand Logos - NO Card, NO Border, NO Box Shadow, NO White Rectangle */
+.marquee-logo-card {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 4px 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.marquee-logo-card:hover {
+  transform: translateY(-3px) scale(1.08);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .marquee-logo-card,
+[data-theme="dark"] .marquee-logo-card:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Clean, Crisp, Full-Color Logo Image */
+.marquee-logo-img {
+  height: 44px;
+  max-width: 165px;
+  width: auto;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 0.88;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, filter 0.35s ease;
+  pointer-events: none;
+}
+
+.marquee-logo-card:hover .marquee-logo-img {
+  opacity: 1 !important;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12)) !important;
+}
+
+[data-theme="dark"] .marquee-logo-img {
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.15)) !important;
+}
+
+[data-theme="dark"] .marquee-logo-card:hover .marquee-logo-img {
+  filter: drop-shadow(0 4px 16px rgba(255, 255, 255, 0.35)) !important;
+}
+
+@media (max-width: 768px) {
+  .shopno-clients-marquee-section {
+    padding: 22px 0 24px 0;
+  }
+  .marquee-trust-pill {
+    font-size: 10px;
+    padding: 4px 12px;
+  }
+  .marquee-track-inner {
+    gap: 46px;
+  }
+  .marquee-logo-img {
+    height: 34px;
+    max-width: 125px;
+  }
+  .marquee-row-rtl {
+    animation-duration: 44s;
   }
 }
