@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -1965,6 +1965,95 @@
         <!--footer end-->
     </div>
 
+    <!-- ================= WEBSITE HEALTH CHECK SCRIPT ================= -->
+    <script>
+        (function () {
+            var CACHE_KEY = 'shopno_site_health_cache';
+            var CACHE_TTL = 24 * 60 * 60 * 1000;
+
+            function getCache() {
+                try {
+                    var raw = localStorage.getItem(CACHE_KEY);
+                    if (!raw) return null;
+                    var obj = JSON.parse(raw);
+                    if (Date.now() - obj.timestamp > CACHE_TTL) return null;
+                    return obj.results;
+                } catch (e) { return null; }
+            }
+
+            function setCache(results) {
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({
+                        timestamp: Date.now(),
+                        results: results
+                    }));
+                } catch (e) {}
+            }
+
+            function checkSite(url) {
+                return new Promise(function (resolve) {
+                    var controller = new AbortController();
+                    var timer = setTimeout(function () {
+                        controller.abort();
+                        resolve(false);
+                    }, 8000);
+                    fetch(url, { method: 'HEAD', mode: 'no-cors', signal: controller.signal })
+                        .then(function () { clearTimeout(timer); resolve(true); })
+                        .catch(function () { clearTimeout(timer); resolve(false); });
+                });
+            }
+
+            function applyResults(results) {
+                document.querySelectorAll('.portfolio-card[data-domain]').forEach(function (card) {
+                    var domain = card.getAttribute('data-domain');
+                    if (domain && results.hasOwnProperty(domain)) {
+                        if (results[domain] === false) {
+                            card.style.transition = 'opacity 0.4s ease';
+                            card.style.opacity = '0';
+                            card.style.overflow = 'hidden';
+                            setTimeout(function () { card.style.display = 'none'; }, 450);
+                        } else {
+                            card.style.display = 'flex';
+                            card.style.opacity = '1';
+                        }
+                    }
+                });
+            }
+
+            function runHealthCheck() {
+                var cached = getCache();
+                if (cached) { applyResults(cached); return; }
+
+                var cards = document.querySelectorAll('.portfolio-card[data-domain]');
+                var domainMap = {};
+                cards.forEach(function (card) {
+                    var domain = card.getAttribute('data-domain');
+                    if (domain && !domainMap[domain]) {
+                        domainMap[domain] = 'https://' + domain;
+                    }
+                });
+
+                var domains = Object.keys(domainMap);
+                if (domains.length === 0) return;
+
+                var results = {};
+                var pending = domains.length;
+                domains.forEach(function (domain) {
+                    checkSite(domainMap[domain]).then(function (isUp) {
+                        results[domain] = isUp;
+                        pending--;
+                        if (pending === 0) { setCache(results); applyResults(results); }
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', runHealthCheck);
+            } else {
+                runHealthCheck();
+            }
+        })();
+    </script>
     <!-- Interactive Scripts for Portfolio Filtering & Search -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
