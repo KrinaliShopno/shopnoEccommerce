@@ -37,8 +37,16 @@
     <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png" />
 
+    <!-- High-Performance Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
     <!-- Main Consolidated Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/style.css?v=3.2" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=5.0" />
 
     <!-- Prevent FOUC: apply saved theme before first paint -->
     <script>
@@ -414,19 +422,19 @@
                     <div class="hero-image-slider">
                         <div class="hero-image-slide active" data-slide="0">
                             <div class="image-wrapper-3d">
-                                <img src="images/slides/slidernew_2.webp" alt="Shopify Development"
+                                <img decoding="async" loading="lazy" src="images/slides/slidernew_2.webp" alt="Shopify Development"
                                     class="hero-main-image">
                             </div>
                         </div>
                         <div class="hero-image-slide" data-slide="1">
                             <div class="image-wrapper-3d">
-                                <img src="images/slides/slidernew_1.webp" alt="Custom Theme Design"
+                                <img decoding="async" loading="lazy" src="images/slides/slidernew_1.webp" alt="Custom Theme Design"
                                     class="hero-main-image">
                             </div>
                         </div>
                         <div class="hero-image-slide" data-slide="2">
                             <div class="image-wrapper-3d">
-                                <img src="images/slides/slidernew_3.webp" alt="Shopify Plus Scaling"
+                                <img decoding="async" loading="lazy" src="images/slides/slidernew_3.webp" alt="Shopify Plus Scaling"
                                     class="hero-main-image">
                             </div>
                         </div>
@@ -651,20 +659,8 @@
         <!-- ================= CLIENT LOGO INFINITE MARQUEE SECTION END ================= -->
 
         <!-- Shopno Horizontal Process Flow Start -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
-        <!-- Tailwind CSS (Scoped via config to avoid preflight resetting the whole site) -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                corePlugins: {
-                    preflight: false,
-                }
-            }
-        </script>
-
-        <div id="about-us" class="shopno-process-flow-container flex flex-col justify-between select-none py-0">
+        <!-- Process flow styling baked natively into css/style.css (Zero CDN delay) -->
+<div id="about-us" class="shopno-process-flow-container flex flex-col justify-between select-none py-0">
             <div class="">
                 <main class="w-full flex-1 flex items-center justify-center p-0 overflow-x-auto">
                     <!-- Outer Full-Width Container (Maintains horizontal banner layout) -->
@@ -747,7 +743,7 @@
                                     </div>
 
                                     <!-- Client Character Vector SVG Replaced with Image -->
-                                    <img src="images/client_cartoon_walk.webp" alt="Client Walking"
+                                    <img decoding="async" loading="lazy" src="images/client_cartoon_walk.webp" alt="Client Walking"
                                         style="mix-blend-mode: multiply;"
                                         class="w-full h-full object-contain relative z-10 scale-110 mb-2" />
                                 </div>
@@ -809,7 +805,7 @@
                                     <div
                                         class="relative z-10 w-44 h-44 xl:w-48 xl:h-48 rounded-full bg-gradient-to-b from-white via-white to-amber-50/70 border-2 border-amber-300 shadow-xl flex flex-col items-center justify-center p-3 text-center">
 
-                                        <img src="images/logo.png" width="150px" height="80px" />
+                                        <img decoding="async" loading="lazy" src="images/logo.png" width="150px" height="80px" />
                                     </div>
                                 </div>
 
@@ -1043,7 +1039,7 @@
                                     </div>
 
                                     <!-- Happy Client Vector SVG Replaced with Image -->
-                                    <img src="images/client_cartoon_happy.webp" alt="Happy Client"
+                                    <img decoding="async" loading="lazy" src="images/client_cartoon_happy.webp" alt="Happy Client"
                                         style="mix-blend-mode: multiply;"
                                         class="w-full h-full object-contain relative z-10 scale-110 mb-2" />
                                 </div>
@@ -1644,7 +1640,7 @@
                         <a href="https://apps.shopify.com/easy-cookie-banner-gdpr-eu" target="_blank"
                             class="app-card gtm-app-link" data-app-name="Easy Cookie GDPR">
                             <div class="app-screenshot">
-                                <img src="images/apps/app1-icon-removebg-preview.png" alt="Shopify Store Development">
+                                <img decoding="async" loading="lazy" src="images/apps/app1-icon-removebg-preview.png" alt="Shopify Store Development">
                             </div>
                             <div class="app-details">
                                 <div class="card-header-row">
@@ -1684,7 +1680,7 @@
                         <a href="https://apps.shopify.com/easy-form-builder-email" target="_blank"
                             class="app-card gtm-app-link" data-app-name="Easy Form Builder">
                             <div class="app-screenshot">
-                                <img src="images/apps/app2-icon-removebg-preview.png" alt="Shopify App Development">
+                                <img decoding="async" loading="lazy" src="images/apps/app2-icon-removebg-preview.png" alt="Shopify App Development">
                             </div>
                             <div class="app-details">
                                 <div class="card-header-row">
@@ -1731,7 +1727,7 @@
                         <a href="https://apps.shopify.com/rewriter-mega-description" target="_blank"
                             class="app-card gtm-app-link" data-app-name="AI ReWriter">
                             <div class="app-screenshot">
-                                <img src="images/apps/app3-icon-removebg-preview.png" alt="Shopify Store Optimization">
+                                <img decoding="async" loading="lazy" src="images/apps/app3-icon-removebg-preview.png" alt="Shopify Store Optimization">
                             </div>
                             <div class="app-details">
                                 <div class="card-header-row">
@@ -1909,7 +1905,7 @@
 
                         <!-- Step 01 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step1_store_dev.webp" alt="Shopify Custom Store Development"
+                            <img decoding="async" src="images/steps/step1_store_dev.webp" alt="Shopify Custom Store Development"
                                 loading="lazy" />
                         </div>
 
@@ -1949,7 +1945,7 @@
 
                         <!-- Step 02 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step2_enterprise_arch.webp"
+                            <img decoding="async" src="images/steps/step2_enterprise_arch.webp"
                                 alt="Shopify Plus Enterprise Architecture" loading="lazy" />
                         </div>
 
@@ -1994,7 +1990,7 @@
 
                         <!-- Step 03 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step3_theme_custom.webp" alt="Shopify Custom Theme Customization"
+                            <img decoding="async" src="images/steps/step3_theme_custom.webp" alt="Shopify Custom Theme Customization"
                                 loading="lazy" />
                         </div>
 
@@ -2036,7 +2032,7 @@
 
                         <!-- Step 04 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step4_app_dev.webp" alt="Bespoke Shopify App Development"
+                            <img decoding="async" src="images/steps/step4_app_dev.webp" alt="Bespoke Shopify App Development"
                                 loading="lazy" />
                         </div>
 
@@ -2079,7 +2075,7 @@
 
                         <!-- Step 05 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step5_speed_cro.webp" alt="Shopify Speed Optimization &amp; CRO"
+                            <img decoding="async" src="images/steps/step5_speed_cro.webp" alt="Shopify Speed Optimization &amp; CRO"
                                 loading="lazy" />
                         </div>
 
@@ -2119,7 +2115,7 @@
 
                         <!-- Step 06 Illustrative Preview -->
                         <div class="wwd-step-image-wrap">
-                            <img src="images/steps/step6_integrations.webp" alt="Third-Party E-commerce Integration"
+                            <img decoding="async" src="images/steps/step6_integrations.webp" alt="Third-Party E-commerce Integration"
                                 loading="lazy" />
                         </div>
 
@@ -3153,7 +3149,7 @@
             });
         </script>
 
-        <script src="js/process-carousel15e1f.js?v=2"></script>
+        <script defer src="js/process-carousel15e1f.js?v=2"></script>
         <!-- JavaScript for Scroll Reveal & Mouse Spotlight Effect -->
         <script>
             (function () {
@@ -3688,7 +3684,7 @@
             </div>
         </section>
 
-        <script src="js/team-slider5e1f.js?v=2"></script>
+        <script defer src="js/team-slider5e1f.js?v=2"></script>
         <section class="testimonials-section">
             <div class="container">
                 <div class="section-header">
@@ -4552,7 +4548,7 @@
                 <div class="achieve-grid">
                     <div class="achieve-card">
                         <div class="achieve-icon-box">
-                            <img src="images/chat.png" alt="Happy Customers"
+                            <img decoding="async" loading="lazy" src="images/chat.png" alt="Happy Customers"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="achieve-content">
@@ -4563,7 +4559,7 @@
 
                     <div class="achieve-card">
                         <div class="achieve-icon-box">
-                            <img src="images/customer-experience.png" alt="Years Experience"
+                            <img decoding="async" loading="lazy" src="images/customer-experience.png" alt="Years Experience"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="achieve-content">
@@ -4574,7 +4570,7 @@
 
                     <div class="achieve-card">
                         <div class="achieve-icon-box">
-                            <img src="images/community.png" alt="Expert Developers"
+                            <img decoding="async" loading="lazy" src="images/community.png" alt="Expert Developers"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="achieve-content">
@@ -4585,7 +4581,7 @@
 
                     <div class="achieve-card">
                         <div class="achieve-icon-box">
-                            <img src="images/task-management.png" alt="Projects Delivered"
+                            <img decoding="async" loading="lazy" src="images/task-management.png" alt="Projects Delivered"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <div class="achieve-content">
@@ -5064,7 +5060,7 @@
                         <div class="footer-col footer-brand-col">
                             <div class="footer-logo-box">
                                 <a href="index.html" class="footer-brand-logo">
-                                    <img src="images/logo.png" alt="Shopno Ecommerce Logo" class="footer-logo-img"
+                                    <img decoding="async" loading="lazy" src="images/logo.png" alt="Shopno Ecommerce Logo" class="footer-logo-img"
                                         style="height: 54px; width: auto; object-fit: contain;">
                                 </a>
                             </div>
@@ -5321,7 +5317,7 @@
     </div><!-- page end -->
 
     <!-- Javascript -->
-    <script src="js/theme5e1f.js?v=2"></script>
+    <script defer src="js/theme5e1f.js?v=2"></script>
     <!-- Javascript end-->
 
     <script>
@@ -5370,7 +5366,7 @@
         });
     </script>
 
-    <script src="js/unique-header.js"></script>
+    <script defer src="js/unique-header.js"></script>
 
     <!-- WhatsApp Enquiry Form Handler -->
     <script>
