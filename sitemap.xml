@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://shopno.in/</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/logo.png</image:loc>
+            <image:title>Shopno E-Commerce Pvt Ltd - Shopify Agency Surat</image:title>
+        </image:image>
+    </url>
+
+    <!-- Portfolio & Case Studies -->
+    <url>
+        <loc>https://shopno.in/portfolio.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/projects/DUNGRANI%20-%20Styling%20With%20Innovation%20Designer%20Fashion%20Hub-400kb.webp</image:loc>
+            <image:title>Dungrani Shopify Storefront by Shopno</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://shopno.in/images/projects/dotivala.webp</image:loc>
+            <image:title>Dotivala Bakery Shopify Storefront by Shopno</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog 1: Best Shopify Agency in Surat -->
+    <url>
+        <loc>https://shopno.in/blog-details-best-shopify-agency-surat.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/blog-img/shopify-develoment.webp</image:loc>
+            <image:title>Best Shopify Development Agency in Surat Guide</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog 2: Custom Shopify Apps & ERP Integrations -->
+    <url>
+        <loc>https://shopno.in/blog-details-shopify-custom-apps-integrations.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/steps/step6_integrations.webp</image:loc>
+            <image:title>Custom Shopify Apps and ERP Integrations Guide</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog 3: Shopify Speed Optimization & CRO -->
+    <url>
+        <loc>https://shopno.in/blog-details-shopify-speed-cro-optimization.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/steps/step5_speed_cro.webp</image:loc>
+            <image:title>Shopify Speed Optimization and CRO Guide</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog 4: Shopify vs WooCommerce vs Magento -->
+    <url>
+        <loc>https://shopno.in/blog-details-shopify-vs-woocommerce-magento.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/blog-img/why_Shopify-Experts.webp</image:loc>
+            <image:title>Shopify vs WooCommerce vs Magento Comparison</image:title>
+        </image:image>
+    </url>
+
+    <!-- Blog 5: Why Shopify is Best in 2026 -->
+    <url>
+        <loc>https://shopno.in/blog-details-why-shopify-best-ecommerce-platform.html</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/blog-img/blog1.webp</image:loc>
+            <image:title>Why Shopify is Best for Growing Businesses</image:title>
+        </image:image>
+    </url>
+
+</urlset>
+

@@ -1,0 +1,18 @@
+# Robots.txt for Shopno E-Commerce Pvt Ltd
+# https://shopno.in
+
+User-agent: *
+Allow: /
+Disallow: /images_originals_backup/
+Disallow: /*.json$
+
+# Googlebot specific optimizations
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://shopno.in/sitemap.xml
+
