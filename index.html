@@ -5740,52 +5740,89 @@ ${message}`;
         </div>
     </div>
 
-    <!-- 5-Second Unique Compact Popup Modal Logic -->
+    <!-- 30-Minute Timed Compact Popup Modal Logic (Does not show on page refresh) -->
     <script>
         (function () {
+            var DELAY_MS = 30 * 60 * 1000; // 30 minutes in milliseconds
+            var FIRST_VISIT_KEY = 'shopno_first_visit_time';
+            var LAST_SHOWN_KEY = 'shopno_popup_last_shown_time';
+
             function initQuickModal() {
-                const modal = document.getElementById('shopnoQuickModal');
-                const closeBtn = document.getElementById('shopnoPopupClose');
+                var modal = document.getElementById('shopnoQuickModal');
+                var closeBtn = document.getElementById('shopnoPopupClose');
+                if (!modal) return;
 
                 function openModal() {
-                    const m = document.getElementById('shopnoQuickModal');
-                    if (m) {
-                        m.classList.add('active');
-                        m.setAttribute('aria-hidden', 'false');
-                    }
+                    modal.classList.add('active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    try {
+                        localStorage.setItem(LAST_SHOWN_KEY, Date.now().toString());
+                    } catch (e) {}
                 }
 
                 function closeModal() {
-                    const m = document.getElementById('shopnoQuickModal');
-                    if (m) {
-                        m.classList.remove('active');
-                        m.setAttribute('aria-hidden', 'true');
-                    }
+                    modal.classList.remove('active');
+                    modal.setAttribute('aria-hidden', 'true');
+                    try {
+                        localStorage.setItem(LAST_SHOWN_KEY, Date.now().toString());
+                        // Reset visit timer so it won't show again for another 30 minutes
+                        localStorage.setItem(FIRST_VISIT_KEY, Date.now().toString());
+                    } catch (e) {}
                 }
 
-                // Trigger after exactly 5 seconds
-                setTimeout(openModal, 5000);
+                // Check first visit timestamp in localStorage
+                var now = Date.now();
+                var firstVisit = null;
+                try {
+                    firstVisit = parseInt(localStorage.getItem(FIRST_VISIT_KEY), 10);
+                } catch (e) {}
+
+                if (!firstVisit || isNaN(firstVisit)) {
+                    // Record first visit time
+                    firstVisit = now;
+                    try {
+                        localStorage.setItem(FIRST_VISIT_KEY, now.toString());
+                    } catch (e) {}
+                }
+
+                var timePassed = now - firstVisit;
+
+                // Only show if full 30 minutes have elapsed since the user first opened the site
+                if (timePassed >= DELAY_MS) {
+                    var lastShown = null;
+                    try {
+                        lastShown = parseInt(localStorage.getItem(LAST_SHOWN_KEY), 10);
+                    } catch (e) {}
+
+                    if (!lastShown || (now - lastShown >= DELAY_MS)) {
+                        setTimeout(openModal, 1500);
+                    }
+                } else {
+                    // Schedule to open only when the remaining 30 minutes complete (will NOT trigger on refresh!)
+                    var remaining = DELAY_MS - timePassed;
+                    setTimeout(openModal, remaining);
+                }
 
                 if (closeBtn) {
                     closeBtn.addEventListener('click', closeModal);
                 }
 
-                if (modal) {
-                    modal.addEventListener('click', function (e) {
-                        if (e.target === modal) {
-                            closeModal();
-                        }
-                    });
-                }
-
-                document.addEventListener('keydown', function (e) {
-                    if (e.key === 'Escape') {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) {
                         closeModal();
                     }
                 });
 
-                window.openShopnoPopup = openModal;
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+
                 window.closeShopnoPopup = closeModal;
+                window.closeQuickModal = closeModal;
+                window.openShopnoPopup = openModal;
+                window.openQuickModal = openModal;
             }
 
             if (document.readyState === 'loading') {

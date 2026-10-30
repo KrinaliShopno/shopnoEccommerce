@@ -2223,45 +2223,7 @@
                 });
             }
 
-            // 5-Second Unique Compact Popup Modal Logic
-            const quickModal = document.getElementById('shopnoQuickModal');
-            const closeBtn = document.getElementById('shopnoPopupClose');
-
-            window.openQuickModal = function () {
-                if (!sessionStorage.getItem('shopno_popup_dismissed') && quickModal) {
-                    quickModal.classList.add('active');
-                    quickModal.setAttribute('aria-hidden', 'false');
-                }
-            };
-
-            window.closeQuickModal = function () {
-                if (quickModal) {
-                    quickModal.classList.remove('active');
-                    quickModal.setAttribute('aria-hidden', 'true');
-                    sessionStorage.setItem('shopno_popup_dismissed', 'true');
-                }
-            };
-
-            // Trigger after exactly 5 seconds
-            setTimeout(window.openQuickModal, 5000);
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', window.closeQuickModal);
-            }
-
-            if (quickModal) {
-                quickModal.addEventListener('click', function (e) {
-                    if (e.target === quickModal) {
-                        window.closeQuickModal();
-                    }
-                });
-            }
-
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && quickModal && quickModal.classList.contains('active')) {
-                    window.closeQuickModal();
-                }
-            });
+            // Popup handled by dedicated 30-minute timed script
         });
     </script>
 
@@ -2333,6 +2295,98 @@
             </div>
         </div>
     </div>
+    <!-- 30-Minute Timed Compact Popup Modal Logic (Does not show on page refresh) -->
+    <script>
+        (function () {
+            var DELAY_MS = 30 * 60 * 1000; // 30 minutes in milliseconds
+            var FIRST_VISIT_KEY = 'shopno_first_visit_time';
+            var LAST_SHOWN_KEY = 'shopno_popup_last_shown_time';
+
+            function initQuickModal() {
+                var modal = document.getElementById('shopnoQuickModal');
+                var closeBtn = document.getElementById('shopnoPopupClose');
+                if (!modal) return;
+
+                function openModal() {
+                    modal.classList.add('active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    try {
+                        localStorage.setItem(LAST_SHOWN_KEY, Date.now().toString());
+                    } catch (e) {}
+                }
+
+                function closeModal() {
+                    modal.classList.remove('active');
+                    modal.setAttribute('aria-hidden', 'true');
+                    try {
+                        localStorage.setItem(LAST_SHOWN_KEY, Date.now().toString());
+                        // Reset visit timer so it won't show again for another 30 minutes
+                        localStorage.setItem(FIRST_VISIT_KEY, Date.now().toString());
+                    } catch (e) {}
+                }
+
+                // Check first visit timestamp in localStorage
+                var now = Date.now();
+                var firstVisit = null;
+                try {
+                    firstVisit = parseInt(localStorage.getItem(FIRST_VISIT_KEY), 10);
+                } catch (e) {}
+
+                if (!firstVisit || isNaN(firstVisit)) {
+                    // Record first visit time
+                    firstVisit = now;
+                    try {
+                        localStorage.setItem(FIRST_VISIT_KEY, now.toString());
+                    } catch (e) {}
+                }
+
+                var timePassed = now - firstVisit;
+
+                // Only show if full 30 minutes have elapsed since the user first opened the site
+                if (timePassed >= DELAY_MS) {
+                    var lastShown = null;
+                    try {
+                        lastShown = parseInt(localStorage.getItem(LAST_SHOWN_KEY), 10);
+                    } catch (e) {}
+
+                    if (!lastShown || (now - lastShown >= DELAY_MS)) {
+                        setTimeout(openModal, 1500);
+                    }
+                } else {
+                    // Schedule to open only when the remaining 30 minutes complete (will NOT trigger on refresh!)
+                    var remaining = DELAY_MS - timePassed;
+                    setTimeout(openModal, remaining);
+                }
+
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeModal);
+                }
+
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+
+                window.closeShopnoPopup = closeModal;
+                window.closeQuickModal = closeModal;
+                window.openShopnoPopup = openModal;
+                window.openQuickModal = openModal;
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initQuickModal);
+            } else {
+                initQuickModal();
+            }
+        })();
+    </script>
 </body>
 
 </html>
