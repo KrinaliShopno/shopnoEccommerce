@@ -832,8 +832,20 @@
         <!-- ================= CLIENT LOGO INFINITE MARQUEE SECTION END ================= -->
 
         <!-- Shopno Horizontal Process Flow Start -->
-        <!-- Process flow styling baked natively into css/style.css (Zero CDN delay) -->
-<div id="about-us" class="shopno-process-flow-container flex flex-col justify-between select-none py-0">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <!-- Tailwind CSS (Scoped via config to avoid preflight resetting the whole site) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                corePlugins: {
+                    preflight: false,
+                }
+            }
+        </script>
+
+        <div id="about-us" class="shopno-process-flow-container flex flex-col justify-between select-none py-0">
             <div class="">
                 <main class="w-full flex-1 flex items-center justify-center p-0 overflow-x-auto">
                     <!-- Outer Full-Width Container (Maintains horizontal banner layout) -->
