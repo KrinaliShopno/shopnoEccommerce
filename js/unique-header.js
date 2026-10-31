@@ -110,12 +110,31 @@
             });
         });
 
+        // Detect current page
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+        const isIndexPage = (currentPage === '' || currentPage === 'index.html');
+
         /* ── Set Active Navigation Link State ─────────────────────────── */
         function setActiveLink(activeId) {
             const links = document.querySelectorAll('.nav-link-btn, .mobile-nav-link');
             links.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === '#' + activeId) {
+                const href = (link.getAttribute('href') || '').trim();
+
+                // On standalone pages (e.g., dropshipping.html, portfolio.html), keep current page link active
+                if (!isIndexPage) {
+                    const linkPage = href.split('#')[0].split('?')[0].split('/').pop();
+                    if (linkPage && linkPage === currentPage) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                    return;
+                }
+
+                // On index.html, match section or default home
+                if (href === '#' + activeId || href === 'index.html#' + activeId || 
+                   (activeId === 'hero-section' && (href === '#' || href === '#hero-section' || href === 'index.html'))) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
@@ -126,6 +145,11 @@
         /* ── Live Scrollspy Engine ─────────────────────────────────────── */
         let scrollTimeout;
         function updateScrollSpy() {
+            if (!isIndexPage) {
+                setActiveLink('');
+                return;
+            }
+
             const headerHeight = header ? header.offsetHeight : 80;
             const scrollPosition = window.pageYOffset + headerHeight + 50;
 

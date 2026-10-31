@@ -17,6 +17,18 @@
         </image:image>
     </url>
 
+    <!-- Dropshipping & Multi-Vendor Marketplace -->
+    <url>
+        <loc>https://shopno.in/dropshipping.html</loc>
+        <lastmod>2026-10-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <image:image>
+            <image:loc>https://shopno.in/images/logo.png</image:loc>
+            <image:title>Build Dropshipping & Multi-Vendor Marketplace with Shopify</image:title>
+        </image:image>
+    </url>
+
     <!-- Portfolio & Case Studies -->
     <url>
         <loc>https://shopno.in/portfolio.html</loc>

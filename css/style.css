@@ -44317,7 +44317,7 @@ body {
   background-repeat: no-repeat !important;
   color: #fff;
   padding-top: 70px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
@@ -44679,6 +44679,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -50642,17 +50643,23 @@ body {
   border: 1px solid #fde68a !important;
 }
 
-/* Single line tags and share bar (Amrut style) */
+/* ==========================================================================
+   Premium Blog Article Footer, Author Deck & Insight Navigation
+   ========================================================================== */
+
+/* 1. Tags & Share Capsule Bar */
 .blog-article-footer-card {
-  margin-top: 40px !important;
-  padding: 24px 0 0 0 !important;
-  border-top: 1px solid #edf2f7 !important;
-  background: transparent !important;
-  border-left: none !important;
-  border-right: none !important;
-  border-bottom: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  margin-top: 48px !important;
+  padding: 18px 24px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03) !important;
+}
+
+[data-theme="dark"] .blog-article-footer-card {
+  background: #111827 !important;
+  border-color: #1e293b !important;
 }
 
 .article-footer-inline {
@@ -50663,18 +50670,26 @@ body {
   flex-wrap: wrap !important;
 }
 
-.footer-tags-group,
-.footer-share-group {
+.footer-tags-group {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 12px !important;
   flex-wrap: wrap !important;
 }
 
 .inline-meta-label {
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  color: #64748b !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+[data-theme="dark"] .inline-meta-label {
+  color: #f8fafc !important;
 }
 
 .tags-pills-wrap {
@@ -50685,181 +50700,326 @@ body {
 }
 
 .blog-tag-pill {
-  display: inline-block !important;
-  font-size: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
-  padding: 4px 12px !important;
-  border-radius: 6px !important;
-  background: #ffffff !important;
-  color: #475569 !important;
+  padding: 6px 14px !important;
+  border-radius: 50px !important;
+  background: #f8fafc !important;
+  color: #334155 !important;
   text-decoration: none !important;
   border: 1px solid #e2e8f0 !important;
-  transition: all 0.2s ease !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-theme="dark"] .blog-tag-pill {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
 }
 
 .blog-tag-pill:hover {
-  background: #f8fafc !important;
-  border-color: #cbd5e1 !important;
-  color: #0f172a !important;
+  background: #fef3c7 !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15) !important;
+}
+
+.footer-share-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
 }
 
 .share-icons-wrap {
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
 }
 
 .social-icon-btn {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 50% !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 10px !important;
   border: 1px solid #e2e8f0 !important;
   background: #ffffff !important;
   color: #64748b !important;
-  font-size: 13px !important;
+  font-size: 15px !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  transition: all 0.2s ease !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
-.social-icon-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+.social-icon-btn.wa {
+  background: #edfdf2 !important;
+  border-color: #bbf7d0 !important;
+  color: #16a34a !important;
 }
 
 .social-icon-btn.wa:hover {
-  color: #25D366 !important;
-  border-color: #25D366 !important;
+  background: #22c55e !important;
+  color: #ffffff !important;
+  border-color: #22c55e !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.3) !important;
+}
+
+.social-icon-btn.li {
+  background: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #0284c7 !important;
 }
 
 .social-icon-btn.li:hover {
-  color: #0077b5 !important;
+  background: #0077b5 !important;
+  color: #ffffff !important;
   border-color: #0077b5 !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(0, 119, 181, 0.3) !important;
+}
+
+.social-icon-btn.tw {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
 }
 
 .social-icon-btn.tw:hover {
-  color: #0f172a !important;
+  background: #0f172a !important;
+  color: #ffffff !important;
   border-color: #0f172a !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.3) !important;
+}
+
+.social-icon-btn.cp {
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #d97706 !important;
 }
 
 .social-icon-btn.cp:hover {
-  color: #b45309 !important;
-  border-color: #b45309 !important;
+  background: #f59e0b !important;
+  color: #ffffff !important;
+  border-color: #f59e0b !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3) !important;
 }
 
-/* Sleek subtle author deck */
+/* 2. Signature Author & Shopify Partner Deck */
 .blog-author-box {
-  background: #f8fafc !important;
-  border: 1px solid #edf2f7 !important;
-  border-radius: 12px !important;
-  padding: 18px 22px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fbfcfe 100%) !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-top: 3.5px solid #f59e0b !important;
+  border-radius: 20px !important;
+  padding: 30px 34px !important;
   display: flex !important;
-  gap: 16px !important;
+  gap: 24px !important;
   align-items: center !important;
-  margin: 32px 0 24px 0 !important;
-  box-shadow: none !important;
+  margin: 36px 0 32px 0 !important;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.05) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .blog-author-box {
+  background: #111827 !important;
+  border-color: #1e293b !important;
+  border-top-color: #f59e0b !important;
+}
+
+.blog-author-box:hover {
+  box-shadow: 0 14px 40px rgba(245, 158, 11, 0.1) !important;
+  border-color: #cbd5e1 !important;
+  border-top-color: #f59e0b !important;
+}
+
+@media (max-width: 640px) {
+  .blog-author-box {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 24px 20px !important;
+  }
 }
 
 .blog-author-avatar {
-  width: 52px !important;
-  height: 52px !important;
-  border-radius: 10px !important;
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 18px !important;
   object-fit: contain !important;
-  padding: 6px !important;
+  padding: 10px !important;
   background: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
+  border: 2px solid rgba(245, 158, 11, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.12) !important;
   flex-shrink: 0 !important;
 }
 
+.blog-author-info {
+  flex: 1 !important;
+}
+
 .blog-author-info h4 {
-  font-size: 15px !important;
+  font-size: 18px !important;
   font-weight: 800 !important;
   color: #0f172a !important;
-  margin: 0 0 3px 0 !important;
+  margin: 0 0 6px 0 !important;
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 8px !important;
+}
+
+[data-theme="dark"] .blog-author-info h4 {
+  color: #f8fafc !important;
+}
+
+@media (max-width: 640px) {
+  .blog-author-info h4 {
+    justify-content: center !important;
+  }
 }
 
 .verified-badge-icon {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 15px !important;
-  height: 15px !important;
-  background: #0284c7 !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
   color: #ffffff !important;
   border-radius: 50% !important;
-  font-size: 8px !important;
+  font-size: 10px !important;
   font-weight: 900 !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35) !important;
 }
 
 .blog-author-role {
-  font-size: 11px !important;
+  font-size: 11.5px !important;
   color: #b45309 !important;
-  font-weight: 750 !important;
+  font-weight: 800 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  margin-bottom: 4px !important;
-  display: block !important;
+  letter-spacing: 0.06em !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.22) !important;
+  padding: 4px 12px !important;
+  border-radius: 50px !important;
+  margin-bottom: 10px !important;
+  display: inline-block !important;
 }
 
 .blog-author-info p {
-  font-size: 13px !important;
-  color: #64748b !important;
+  font-size: 14.5px !important;
+  color: #475569 !important;
   margin: 0 !important;
-  line-height: 1.5 !important;
+  line-height: 1.65 !important;
 }
 
+[data-theme="dark"] .blog-author-info p {
+  color: #94a3b8 !important;
+}
+
+/* 3. High-Converting 2-Column Insight Navigation Grid */
 .blog-post-navigation {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 14px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid #edf2f7 !important;
-  margin-bottom: 24px !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  padding: 32px 0 0 0 !important;
+  border-top: 1.5px solid #e2e8f0 !important;
+  margin-bottom: 36px !important;
+  width: 100% !important;
 }
 
-@media (max-width: 600px) {
+[data-theme="dark"] .blog-post-navigation {
+  border-top-color: #1e293b !important;
+}
+
+@media (max-width: 640px) {
   .blog-post-navigation {
     grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 }
 
 .blog-nav-link-item {
   display: flex !important;
   flex-direction: column !important;
-  gap: 4px !important;
-  padding: 14px 18px !important;
-  border: 1px solid #edf2f7 !important;
-  border-radius: 10px !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 22px 26px !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 16px !important;
   text-decoration: none !important;
-  background: #f8fafc !important;
-  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+[data-theme="dark"] .blog-nav-link-item {
+  background: #111827 !important;
+  border-color: #1e293b !important;
 }
 
 .blog-nav-link-item:hover {
-  border-color: #cbd5e1 !important;
-  background: #ffffff !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+  border-color: #f59e0b !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdfa 100%) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 28px rgba(245, 158, 11, 0.12) !important;
+}
+
+[data-theme="dark"] .blog-nav-link-item:hover {
+  background: #1f2937 !important;
+  border-color: #f59e0b !important;
 }
 
 .blog-nav-link-item .nav-direction {
-  font-size: 11px !important;
-  font-weight: 750 !important;
-  color: #b45309 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #f59e0b !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: transform 0.25s ease !important;
+}
+
+.blog-nav-link-item:first-child:hover .nav-direction {
+  transform: translateX(-4px) !important;
+}
+
+
+.blog-nav-link-item:last-child .nav-direction {
+  justify-content: flex-end !important;
+}
+.blog-nav-link-item:last-child:hover .nav-direction {
+  transform: translateX(4px) !important;
 }
 
 .blog-nav-link-item .nav-post-title {
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
   color: #0f172a !important;
-  line-height: 1.4 !important;
+  line-height: 1.45 !important;
+  transition: color 0.2s ease !important;
+}
+
+[data-theme="dark"] .blog-nav-link-item .nav-post-title {
+  color: #f8fafc !important;
+}
+
+.blog-nav-link-item:hover .nav-post-title {
+  color: #d97706 !important;
 }
 
 /* Sidebar Widgets */
@@ -51044,4 +51204,2185 @@ body {
 .blog-cta-btn-call:hover {
   background: #f1f5f9 !important;
   border-color: #cbd5e1 !important;
+}
+
+
+/* ==========================================================================
+   DROPSHIPPING LANDING PAGE (MATCHING media_1793353542822_8c58382a.jpg)
+   ========================================================================== */
+
+.dropship-page {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+[data-theme="dark"] .dropship-page {
+  background: #060911;
+  color: #f8fafc;
+}
+
+/* Common Section Header Utilities */
+.ds-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fffbeb;
+  border: 1px solid #fef3c7;
+  color: #d97706;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+[data-theme="dark"] .ds-header-pill {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fbbf24;
+}
+
+.ds-header-pill.dark-badge {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+/* 1. HERO SECTION (Dark With Golden Wave & Flow Blueprint) */
+.ds-full-hero {
+  position: relative;
+  background: radial-gradient(circle at 85% 25%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
+              radial-gradient(circle at 15% 75%, rgba(30, 58, 138, 0.35) 0%, transparent 55%),
+              linear-gradient(180deg, #050811 0%, #090e1c 50%, #0c1428 100%);
+  color: #ffffff;
+  padding: 130px 0 110px 0;
+  overflow: hidden;
+}
+
+.ds-hero-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 45px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .ds-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.ds-hero-h1 {
+  font-size: 46px;
+  font-weight: 850;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.02em;
+}
+
+.ds-hero-h1 .ds-gold-txt {
+  color: #f59e0b;
+}
+
+.ds-hero-sub {
+  font-size: 15.5px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin: 0 0 32px 0;
+  max-width: 540px;
+}
+
+.ds-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 38px;
+  flex-wrap: wrap;
+}
+
+.ds-btn-consult {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 14.5px;
+  padding: 14px 26px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+}
+
+.ds-btn-consult:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(245, 158, 11, 0.5);
+  color: #000000;
+}
+
+.ds-btn-video {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.ds-btn-video:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Hero Stats Row (Image 1 bottom-left) */
+.ds-hero-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ds-stat-capsule {
+  background: rgba(13, 21, 39, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 18px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+}
+
+.ds-stat-capsule strong {
+  font-size: 18px;
+  font-weight: 900;
+  color: #f59e0b;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.ds-stat-capsule span {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Hero Blueprint Card (Right side) */
+.ds-hero-bp-box {
+  background: #090e1b;
+  border: 1.5px solid rgba(245, 158, 11, 0.35);
+  border-radius: 24px;
+  padding: 34px 28px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(245, 158, 11, 0.1);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.ds-floating-shopify {
+  position: absolute;
+  top: -18px;
+  right: -14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #111a2e;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  animation: floatBadge 3.5s ease-in-out infinite;
+  z-index: 5;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ds-bp-header-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.ds-bp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+.ds-bp-flow-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 34px 0;
+  position: relative;
+}
+
+.ds-bp-node-sup {
+  width: 76px;
+  height: 76px;
+  border-radius: 16px;
+  background: #101828;
+  border: 1.5px solid #f59e0b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+}
+
+.ds-bp-node-sup i {
+  color: #f59e0b;
+  font-size: 22px;
+}
+
+.ds-bp-node-sup span {
+  font-size: 10px;
+  font-weight: 800;
+  color: #cbd5e1;
+  text-transform: uppercase;
+}
+
+.ds-bp-node-eng {
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #0f172a;
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.4);
+  z-index: 2;
+}
+
+.ds-bp-node-eng i {
+  font-size: 26px;
+  color: #0f172a;
+  animation: spinGear 8s linear infinite;
+}
+
+.ds-bp-node-eng span {
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+.ds-bp-stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 2;
+}
+
+.ds-bp-store-item {
+  width: 86px;
+  height: 44px;
+  border-radius: 10px;
+  background: #101828;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.ds-bp-store-item i {
+  color: #f59e0b;
+}
+
+/* Wavy bottom border transition with scroll down arrow */
+.ds-hero-bottom-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: translateY(1px);
+}
+
+.ds-hero-bottom-curve svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.ds-scroll-arrow-circle {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 2px solid #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 13px;
+  z-index: 10;
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-6px); }
+  60% { transform: translateX(-50%) translateY(-3px); }
+}
+
+/* -------------------------------------------------------------
+   2. SECTION: WHAT WE DEVELOP (2 CARDS AS IN IMAGE)
+------------------------------------------------------------- */
+.ds-develop-section-v2 {
+  padding: 80px 0 90px 0;
+  background: #ffffff;
+}
+
+[data-theme="dark"] .ds-develop-section-v2 {
+  background: #060911;
+}
+
+.ds-sec-center {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 45px auto;
+}
+
+.ds-sec-center h2 {
+  font-size: 36px;
+  font-weight: 850;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .ds-sec-center h2 {
+  color: #ffffff;
+}
+
+.ds-sec-center p {
+  font-size: 15.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+[data-theme="dark"] .ds-sec-center p {
+  color: #94a3b8;
+}
+
+.ds-v2-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .ds-v2-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ds-v2-card {
+  background: #ffffff;
+  border: 1.5px solid #edf2f7;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+[data-theme="dark"] .ds-v2-card {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+.ds-v2-card:hover {
+  transform: translateY(-4px);
+  border-color: #f59e0b;
+  box-shadow: 0 16px 36px rgba(245, 158, 11, 0.12);
+}
+
+.ds-v2-preview-dark {
+  background: #090e1b;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ds-v2-card-body {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ds-v2-badge-tag {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #f59e0b;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ds-v2-card-body h3 {
+  font-size: 22px;
+  font-weight: 850;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+}
+
+[data-theme="dark"] .ds-v2-card-body h3 {
+  color: #ffffff;
+}
+
+.ds-v2-card-body p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+[data-theme="dark"] .ds-v2-card-body p {
+  color: #94a3b8;
+}
+
+.ds-v2-checks-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ds-v2-check-item {
+  font-size: 13.5px;
+  color: #334155;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+[data-theme="dark"] .ds-v2-check-item {
+  color: #cbd5e1;
+}
+
+.ds-v2-check-item i {
+  color: #f59e0b;
+  font-size: 13px;
+}
+
+.ds-v2-plus-btn {
+  align-self: flex-end;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ds-v2-plus-btn:hover {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------
+   3. SECTION: BUILD A PLATFORM LIKE CJDROPSHIPPING (10 Cards)
+------------------------------------------------------------- */
+.ds-cj-section-v2 {
+  padding: 85px 0 95px 0;
+  background: #fbfcfe;
+  border-top: 1px solid #edf2f7;
+}
+
+[data-theme="dark"] .ds-cj-section-v2 {
+  background: #080c14;
+  border-color: #1e293b;
+}
+
+.ds-cj-grid-10 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .ds-cj-grid-10 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ds-cj-grid-10 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ds-cj-tile {
+  background: #ffffff;
+  border: 1.5px solid #edf2f7;
+  border-radius: 16px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .ds-cj-tile {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+.ds-cj-tile:hover {
+  transform: translateY(-3px);
+  border-color: #f59e0b;
+  box-shadow: 0 10px 24px rgba(245, 158, 11, 0.1);
+}
+
+.ds-cj-tile.dark-featured {
+  background: #090e1b;
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #ffffff;
+}
+
+.ds-cj-tile.dark-featured h4 {
+  color: #ffffff;
+}
+
+.ds-cj-tile.dark-featured p {
+  color: #cbd5e1;
+}
+
+.ds-cj-tile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #fef3c7;
+  color: #d97706;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.ds-cj-tile.dark-featured .ds-cj-tile-icon {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+}
+
+.ds-cj-tile h4 {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.ds-cj-tile p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  flex: 1;
+}
+
+.ds-cj-learn-more {
+  font-size: 12px;
+  font-weight: 750;
+  color: #f59e0b;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.2s ease;
+}
+
+.ds-cj-learn-more:hover {
+  transform: translateX(4px);
+  color: #d97706;
+}
+
+/* -------------------------------------------------------------
+   4. SECTION: WHO CAN BENEFIT (2-COLUMN WITH 3D LAPTOP MOCKUP)
+------------------------------------------------------------- */
+.ds-benefit-section-v2 {
+  padding: 85px 0 95px 0;
+  background: #ffffff;
+}
+
+[data-theme="dark"] .ds-benefit-section-v2 {
+  background: #060911;
+}
+
+.ds-benefit-2col-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .ds-benefit-2col-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ds-benefit-list-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ds-benefit-item-v2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ds-benefit-num-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .ds-benefit-num-icon {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+.ds-benefit-txt-v2 h4 {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+[data-theme="dark"] .ds-benefit-txt-v2 h4 {
+  color: #ffffff;
+}
+
+.ds-benefit-txt-v2 p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .ds-benefit-txt-v2 p {
+  color: #94a3b8;
+}
+
+/* 3D Laptop & Ecosystem Illustration in Right Column */
+.ds-benefit-graphic-box {
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.12) 0%, transparent 65%), #ffffff;
+  border: 1.5px solid #edf2f7;
+  border-radius: 24px;
+  padding: 40px 30px;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .ds-benefit-graphic-box {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+/* -------------------------------------------------------------
+   5. SECTION: TESTIMONIALS (WHAT OUR CLIENTS SAY)
+------------------------------------------------------------- */
+.ds-testimonials-section {
+  padding: 85px 0 95px 0;
+  background: #060911;
+  color: #ffffff;
+  position: relative;
+}
+
+.ds-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .ds-testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ds-review-card {
+  background: #0d1424;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.ds-review-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(245, 158, 11, 0.15);
+}
+
+.ds-review-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ds-review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f59e0b;
+}
+
+.ds-review-name h5 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.ds-review-name span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.ds-review-quote {
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+  font-style: italic;
+}
+
+.ds-review-stars {
+  color: #f59e0b;
+  font-size: 13px;
+}
+
+/* -------------------------------------------------------------
+   6. SECTION: OUR CLIENTS (LOGO STRIP)
+------------------------------------------------------------- */
+.ds-client-logos-section {
+  padding: 45px 0 50px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #edf2f7;
+}
+
+[data-theme="dark"] .ds-client-logos-section {
+  background: #080c14;
+  border-color: #1e293b;
+}
+
+.ds-logos-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  margin: 20px auto 0 auto;
+  opacity: 0.75;
+}
+
+.ds-logo-brand {
+  font-size: 20px;
+  font-weight: 850;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.ds-logo-brand:hover {
+  color: #f59e0b;
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------
+   7. SECTION: BOTTOM CTA BANNER (LET'S BUILD TOGETHER)
+------------------------------------------------------------- */
+.ds-cta-banner-v2 {
+  background: radial-gradient(circle at 85% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 60%),
+              linear-gradient(135deg, #050811 0%, #0d1527 100%);
+  color: #ffffff;
+  padding: 85px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-cta-inner-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  flex-wrap: wrap;
+}
+
+.ds-cta-left-box {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ds-rocket-icon {
+  font-size: 54px;
+  color: #f59e0b;
+  animation: floatBadge 3s infinite ease-in-out;
+}
+
+.ds-cta-txt h3 {
+  font-size: 32px;
+  font-weight: 850;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.ds-cta-txt p {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.ds-mission-script {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 26px;
+  color: #f59e0b;
+  transform: rotate(-4deg);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.ds-cta-btns-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media (max-width: 991px) {
+  .ds-cta-btns-right {
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   DROPSHIPPING & MULTI-VENDOR MARKETPLACE PAGE (PIXEL-PERFECT FROM MOCKUP)
+   ========================================================================== */
+
+/* Page Wrapper with Golden Ambient Fluid Blobs in Background */
+.ds-page-container {
+  background-color: #fafbfc;
+  background-image: 
+    radial-gradient(ellipse 650px 450px at -80px 1100px, rgba(245, 158, 11, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 750px 550px at calc(100% + 120px) 1950px, rgba(245, 158, 11, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 550px 420px at -60px 3100px, rgba(245, 158, 11, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 700px 500px at calc(100% + 100px) 4100px, rgba(245, 158, 11, 0.13) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+[data-theme="dark"] .ds-page-container {
+  background-color: #050811;
+  background-image: 
+    radial-gradient(ellipse 650px 450px at -80px 1100px, rgba(245, 158, 11, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 750px 550px at calc(100% + 120px) 1950px, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  color: #f1f5f9;
+}
+
+/* Common Section Badges */
+.ds-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  margin-bottom: 16px;
+}
+
+.ds-pill-badge i {
+  color: #f59e0b;
+}
+
+.ds-pill-badge-dark {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.ds-section-title {
+  font-size: 38px;
+  font-weight: 850;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+}
+
+[data-theme="dark"] .ds-section-title {
+  color: #ffffff;
+}
+
+.ds-section-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .ds-section-subtitle {
+  color: #94a3b8;
+}
+
+/* -------------------------------------------------------------
+   1. HERO SECTION (DARK NAVY WITH GOLD ACCENTS & WAVE DIVIDER)
+------------------------------------------------------------- */
+.ds-hero-section {
+  background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+              linear-gradient(180deg, #040711 0%, #080f21 55%, #0b1329 100%);
+  color: #ffffff;
+  position: relative;
+  padding: 85px 0 140px 0;
+  overflow: hidden;
+}
+
+.ds-hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ds-hero-left {
+  max-width: 580px;
+}
+
+.ds-hero-title {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.18;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.ds-hero-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 60%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.ds-hero-desc {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin: 0 0 32px 0;
+}
+
+.ds-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+.ds-btn-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #040711 !important;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ds-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(245, 158, 11, 0.55);
+  color: #000000 !important;
+}
+
+.ds-btn-video {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.ds-btn-video:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #f59e0b !important;
+}
+
+.ds-btn-video i {
+  color: #f59e0b;
+}
+
+/* Hero Stats Capsules */
+.ds-hero-stats {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ds-stat-capsule {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 18px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-stat-num {
+  font-size: 18px;
+  font-weight: 850;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ds-stat-num i {
+  color: #f59e0b;
+  font-size: 12px;
+}
+
+.ds-stat-lbl {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+/* Right Side Schematic Blueprint */
+.ds-hero-right {
+  position: relative;
+}
+
+.ds-schematic-card {
+  background: linear-gradient(145deg, #091024 0%, #0d1733 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 158, 11, 0.12);
+  position: relative;
+  overflow: visible;
+}
+
+/* Floating Shopify Bag Badge */
+.ds-shopify-badge-floating {
+  position: absolute;
+  top: -24px;
+  right: -16px;
+  background: #008060;
+  border: 2px solid #5cbf86;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 128, 96, 0.6);
+  animation: floatBag 3.5s infinite ease-in-out;
+  z-index: 10;
+}
+
+.ds-shopify-badge-floating svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+
+@keyframes floatBag {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-3deg); }
+}
+
+/* Hero Bottom Swooping Wave with Scroll Button */
+.ds-hero-wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.ds-hero-wave-svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.ds-hero-wave-svg path {
+  fill: #fafbfc;
+}
+
+[data-theme="dark"] .ds-hero-wave-svg path {
+  fill: #050811;
+}
+
+.ds-scroll-down-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #091024;
+  border: 2px solid #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+  z-index: 5;
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-6px); }
+  60% { transform: translateX(-50%) translateY(-3px); }
+}
+
+/* -------------------------------------------------------------
+   2. SECTION: LAUNCH DROPSHIPPING BUSINESS & WHAT WE DEVELOP
+------------------------------------------------------------- */
+.ds-services-section {
+  padding: 80px 0 70px 0;
+  position: relative;
+}
+
+.ds-services-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ds-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.ds-sub-heading-bar {
+  font-size: 24px;
+  font-weight: 850;
+  color: #0f172a;
+  text-align: center;
+  margin-top: 35px;
+}
+
+[data-theme="dark"] .ds-sub-heading-bar {
+  color: #ffffff;
+}
+
+/* 2-Column Develop Cards */
+.ds-develop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.ds-develop-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .ds-develop-card {
+  background: #0d1527;
+  border-color: #1e293b;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.ds-develop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Preview Graphic Top Box */
+.ds-dev-preview-box {
+  background: #070d1a;
+  border-radius: 14px;
+  height: 160px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1a243b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.ds-dev-badge-corner {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 15px;
+}
+
+/* Card Body Content */
+.ds-tag-pill {
+  display: inline-block;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+[data-theme="dark"] .ds-tag-pill {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.ds-dev-title {
+  font-size: 22px;
+  font-weight: 850;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+[data-theme="dark"] .ds-dev-title {
+  color: #ffffff;
+}
+
+.ds-dev-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0 0 20px 0;
+}
+
+[data-theme="dark"] .ds-dev-desc {
+  color: #94a3b8;
+}
+
+/* Checklist 2-Column */
+.ds-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 18px;
+  margin-top: auto;
+  padding-bottom: 15px;
+}
+
+.ds-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+[data-theme="dark"] .ds-check-item {
+  color: #cbd5e1;
+}
+
+.ds-check-item i {
+  color: #f59e0b;
+  font-size: 12px;
+}
+
+/* Floating Plus Action Button in Corner */
+.ds-card-plus-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #040711;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 900;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ds-card-plus-btn:hover {
+  transform: scale(1.1);
+  background: #d97706;
+}
+
+/* -------------------------------------------------------------
+   3. SECTION: BUILD A PLATFORM LIKE CJDROPSHIPPING (10 MODULES)
+------------------------------------------------------------- */
+.ds-cj-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.ds-cj-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ds-cj-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.ds-cj-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+[data-theme="dark"] .ds-cj-card {
+  background: #0d1527;
+  border-color: #1e293b;
+}
+
+.ds-cj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* The 6th Card: Order Management (DARK FEATURED CARD) */
+.ds-cj-card-featured {
+  background: #091024 !important;
+  border: 2px solid #f59e0b !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.2) !important;
+}
+
+.ds-cj-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.ds-cj-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.ds-cj-card-featured .ds-cj-title,
+[data-theme="dark"] .ds-cj-title {
+  color: #ffffff;
+}
+
+.ds-cj-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+  flex-grow: 1;
+}
+
+.ds-cj-card-featured .ds-cj-desc {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .ds-cj-desc {
+  color: #94a3b8;
+}
+
+.ds-cj-learn-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d97706;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.ds-cj-card-featured .ds-cj-learn-btn {
+  color: #f59e0b;
+}
+
+.ds-cj-learn-btn:hover {
+  color: #b45309;
+  gap: 10px;
+}
+
+/* Centering the last row (2 cards) */
+.ds-cj-row-last {
+  grid-column: 2 / span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* -------------------------------------------------------------
+   4. SECTION: WHO CAN BENEFIT FROM OUR SOLUTIONS?
+------------------------------------------------------------- */
+.ds-benefit-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.ds-benefit-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.ds-benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.ds-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.ds-benefit-icon-round {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .ds-benefit-icon-round {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.ds-benefit-txt h4 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+[data-theme="dark"] .ds-benefit-txt h4 {
+  color: #ffffff;
+}
+
+.ds-benefit-txt p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+[data-theme="dark"] .ds-benefit-txt p {
+  color: #94a3b8;
+}
+
+/* 3D Laptop with Surrounding Floating Elements */
+.ds-laptop-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.ds-laptop-3d-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Floating Elements around Laptop */
+.ds-float-elem-bag {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 52px;
+  height: 52px;
+  background: #008060;
+  border: 2px solid #5cbf86;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 128, 96, 0.5);
+  animation: floatBag 3.8s infinite ease-in-out;
+  z-index: 5;
+}
+
+.ds-float-elem-globe {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #60a5fa 0%, #1d4ed8 70%);
+  border: 2px solid #93c5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  animation: floatGlobe 4.5s infinite ease-in-out;
+  z-index: 5;
+}
+
+@keyframes floatGlobe {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(8deg); }
+}
+
+.ds-float-elem-cart {
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #f59e0b;
+  border: 2px solid #fef08a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #040711;
+  font-size: 24px;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.45);
+  animation: floatCart 3.2s infinite ease-in-out;
+  z-index: 5;
+}
+
+@keyframes floatCart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.ds-float-elem-award {
+  position: absolute;
+  top: 45px;
+  right: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fbbf24;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #78350f;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.4);
+  animation: floatCart 4s infinite ease-in-out;
+  z-index: 5;
+}
+
+/* -------------------------------------------------------------
+   5. SECTION: WHY CHOOSE SHOPNO ECOMMERCE PVT. LTD.?
+------------------------------------------------------------- */
+.ds-why-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.ds-why-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ds-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 45px;
+}
+
+.ds-why-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .ds-why-card {
+  background: #0d1527;
+  border-color: #1e293b;
+}
+
+.ds-why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.ds-why-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.ds-why-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+[data-theme="dark"] .ds-why-title {
+  color: #ffffff;
+}
+
+.ds-why-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+[data-theme="dark"] .ds-why-desc {
+  color: #94a3b8;
+}
+
+/* -------------------------------------------------------------
+   6. SECTION: WHAT OUR CLIENTS SAY (TESTIMONIALS SLIDER)
+------------------------------------------------------------- */
+.ds-testimonials-section {
+  background: radial-gradient(circle at 15% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              linear-gradient(180deg, #050811 0%, #080e1e 100%);
+  color: #ffffff;
+  padding: 90px 0 95px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-testimonials-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+.ds-testi-wrapper {
+  position: relative;
+  margin-top: 45px;
+}
+
+.ds-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ds-testi-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.ds-testi-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.ds-testi-quote {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.ds-testi-stars {
+  color: #f59e0b;
+  font-size: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 4px;
+}
+
+.ds-testi-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ds-testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #f59e0b;
+  object-fit: cover;
+}
+
+.ds-testi-author-info h5 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 2px 0;
+}
+
+.ds-testi-author-info span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Nav Arrows */
+.ds-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.ds-slider-arrow:hover {
+  background: #f59e0b;
+  color: #040711;
+  border-color: #f59e0b;
+}
+
+.ds-slider-prev {
+  left: -24px;
+}
+
+.ds-slider-next {
+  right: -24px;
+}
+
+/* Pagination Dots */
+.ds-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.ds-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ds-dot.active {
+  width: 24px;
+  border-radius: 999px;
+  background: #f59e0b;
+}
+
+/* -------------------------------------------------------------
+   7. SECTION: OUR CLIENTS (LOGO BAR)
+------------------------------------------------------------- */
+.ds-clients-logo-section {
+  padding: 60px 0;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+[data-theme="dark"] .ds-clients-logo-section {
+  background: #070c18;
+  border-color: #1e293b;
+}
+
+.ds-clients-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.ds-clients-logos-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+  opacity: 0.85;
+}
+
+.ds-client-brand {
+  font-size: 22px;
+  font-weight: 850;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .ds-client-brand {
+  color: #94a3b8;
+}
+
+.ds-client-brand:hover {
+  color: #f59e0b;
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* -------------------------------------------------------------
+   8. SECTION: BOTTOM CTA BANNER (ROCKET & CALLIGRAPHY)
+------------------------------------------------------------- */
+.ds-bottom-cta-banner {
+  background: radial-gradient(circle at 85% 50%, rgba(245, 158, 11, 0.18) 0%, transparent 60%),
+              radial-gradient(circle at 10% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+              linear-gradient(135deg, #040711 0%, #091024 100%);
+  color: #ffffff;
+  padding: 85px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.ds-bottom-cta-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.ds-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  min-width: 320px;
+}
+
+.ds-cta-rocket-box {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-cta-title-box h3 {
+  font-size: 32px;
+  font-weight: 850;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.ds-cta-title-box p {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.ds-cta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.ds-cursive-tagline {
+  font-family: 'Brush Script MT', 'Caveat', cursive, sans-serif;
+  font-size: 32px;
+  color: #f59e0b;
+  transform: rotate(-4deg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.ds-cursive-tagline i {
+  font-size: 18px;
+  color: #fbbf24;
+}
+
+.ds-cta-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .ds-hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ds-hero-left {
+    max-width: 100%;
+  }
+  .ds-hero-btns {
+    justify-content: center;
+  }
+  .ds-hero-stats {
+    justify-content: center;
+  }
+  .ds-develop-grid {
+    grid-template-columns: 1fr;
+  }
+  .ds-cj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ds-cj-row-last {
+    grid-column: 1 / span 2;
+  }
+  .ds-benefit-container {
+    grid-template-columns: 1fr;
+  }
+  .ds-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .ds-testi-grid {
+    grid-template-columns: 1fr;
+  }
+  .ds-slider-arrow {
+    display: none;
+  }
+  .ds-bottom-cta-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .ds-cta-left {
+    flex-direction: column;
+  }
+  .ds-cta-right {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .ds-hero-title {
+    font-size: 34px;
+  }
+  .ds-section-title {
+    font-size: 28px;
+  }
+  .ds-cj-grid {
+    grid-template-columns: 1fr;
+  }
+  .ds-cj-row-last {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+  }
 }
